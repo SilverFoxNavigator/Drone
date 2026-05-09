@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase - Silver Fox</title>
     
-    <!-- FIXED: Correct Google Font link -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -19,6 +18,7 @@
             overflow-x: hidden;
         }
 
+        /* HEADER: Updated to include Home Icon on the left */
         header { 
             display: flex; 
             align-items: center; 
@@ -30,6 +30,22 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+
+        /* HOME ICON LINK */
+        .home-icon {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-right: 25px;
+            padding-right: 20px;
+            border-right: 1px solid rgba(255,255,255,0.2);
+            line-height: 1;
+            transition: 0.3s;
+        }
+
+        .home-icon:hover {
+            color: #8e949a;
         }
 
         .logo-small { 
@@ -52,7 +68,6 @@
             font-size: 1.5rem;
         }
 
-        /* NEW: Inquire Button Style */
         .contact-btn {
             display: inline-block;
             margin: 20px 0 60px 0;
@@ -68,13 +83,8 @@
             border: 2px solid #fff;
         }
 
-        .contact-btn:hover {
-            background: transparent;
-            color: #fff;
-            transform: translateY(-3px);
-        }
+        .contact-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
 
-        /* RAW VIDEO GRID */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -95,57 +105,25 @@
 
         .video-label { margin-top: 15px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #8e949a; }
 
-        /* TIKTOK SECTION */
-        .tiktok-section {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            background: rgba(0,0,0,0.2);
-        }
-
-        .tiktok-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
+        .tiktok-section { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); }
+        .tiktok-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); margin-bottom: 10px;}
-
         .tiktok-link {
-            display: inline-block;
-            margin-bottom: 40px;
-            padding: 12px 30px;
-            border: 2px solid #ff0050;
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.3s ease;
+            display: inline-block; margin-bottom: 40px; padding: 12px 30px;
+            border: 2px solid #ff0050; border-radius: 50px; color: #fff;
+            text-decoration: none; font-size: 0.8rem; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase; transition: 0.3s ease;
         }
+        .tiktok-link:hover { background: #ff0050; box-shadow: 0 0 25px rgba(255, 0, 80, 0.8); transform: translateY(-3px); }
 
-        .tiktok-link:hover {
-            background: #ff0050;
-            box-shadow: 0 0 25px rgba(255, 0, 80, 0.8);
-            transform: translateY(-3px);
-        }
-
-        .back-home { 
-            color: #fff; text-decoration: none; font-size: 0.7rem; 
-            letter-spacing: 2px; text-transform: uppercase; 
-            margin: 80px 0; display: inline-block; 
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 12px 25px; transition: 0.3s;
-        }
-
-        .back-home:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- HOME ICON LINK -->
+        <a href="index.html" class="home-icon" title="Return Home">⌂</a>
+        
         <div class="logo-small"><img src="Logo1.jpeg" alt="Logo"></div>
         <div class="brand"><h1>Silver Fox Navigator</h1></div>
     </header>
@@ -153,7 +131,6 @@
     <div class="content">
         <h2 class="section-title">Visual Showcase</h2>
 
-        <!-- ADDED CONTACT BUTTON AT THE TOP -->
         <a href="mailto:silverfoxnavigator@outlook.com" class="contact-btn">Inquire for Work</a>
 
         <div class="video-grid">
@@ -170,24 +147,12 @@
 
         <div class="tiktok-section">
             <h2 class="section-title tiktok-title">Edited Content</h2>
-            
-            <a href="https://tiktok.com" target="_blank" class="tiktok-link">
-                Follow @SilverFoxNavigator
-            </a>
-
+            <a href="https://tiktok.com" target="_blank" class="tiktok-link">Follow @SilverFoxNavigator</a>
             <div class="tiktok-grid">
-                <!-- Replace VIDEO_ID with actual numbers from your TikTok clips -->
-                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
-                    <section></section>
-                </blockquote>
-                
-                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
-                    <section></section>
-                </blockquote>
+                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;"><section></section></blockquote>
+                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;"><section></section></blockquote>
             </div>
         </div>
-
-        <a href="index.html" class="back-home">Return to Home</a>
     </div>
 
     <script async src="https://tiktok.com"></script>
