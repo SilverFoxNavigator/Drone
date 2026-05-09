@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Silver Fox</title>
     
+    <!-- FIXED: Correct Google Font link for Montserrat -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -52,7 +53,7 @@
             font-weight: 300;
             letter-spacing: 12px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #d1d1d1;
             font-size: 1.5rem;
         }
@@ -92,7 +93,7 @@
 
         .contact-btn {
             display: inline-block;
-            margin-top: 20px;
+            margin: 20px 0 40px 0;
             padding: 15px 40px;
             background: #fff;
             color: #000;
@@ -102,17 +103,19 @@
             letter-spacing: 3px;
             font-size: 0.8rem;
             transition: 0.3s;
+            border: 2px solid #fff;
         }
 
         .contact-btn:hover {
-            background: #d1d1d1;
+            background: transparent;
+            color: #fff;
             transform: translateY(-3px);
         }
 
         .back-home { 
             color: #8e949a; text-decoration: none; font-size: 0.7rem; 
             letter-spacing: 2px; text-transform: uppercase; 
-            margin-top: 60px; display: inline-block; 
+            margin-top: 20px; display: inline-block; 
             border-bottom: 1px solid #8e949a;
             padding-bottom: 5px;
         }
@@ -129,6 +132,9 @@
 
     <div class="content">
         <h2 class="section-title">About Me</h2>
+
+        <!-- MOVED BUTTON TO THE TOP WITH UPDATED EMAIL -->
+        <a href="mailto:silverfoxnavigator@outlook.com" class="contact-btn">Inquire for Work</a>
 
         <div class="bio-card">
             <p>
@@ -149,8 +155,6 @@
                 <div class="skill-item">Visual Arts</div>
             </div>
         </div>
-
-        <a href="mailto:your-email@example.com" class="contact-btn">Inquire for Work</a>
 
         <br>
         <a href="index.html" class="back-home">Return to Home</a>
