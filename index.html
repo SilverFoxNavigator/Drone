@@ -3,132 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver Fox Navigator | Rugged Aerials</title>
-    
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Russo+One&family=Special+Elite&display=swap" rel="stylesheet">
-
+    <title>Silver Fox Navigator</title>
     <style>
-        /* This makes the "jump" smooth and prevents the menu from covering titles */
-        html { 
-            scroll-behavior: smooth; 
-            scroll-padding-top: 100px; 
+        /* 1. GLOBAL RESET */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #0a0a0a;
         }
 
-        :root { 
-            --accent: #d4d4d4; 
-            --gold: #c5a059; 
-            --dark: #121212; 
-        }
-
-        body { 
-            font-family: 'Special Elite', system-ui, serif; 
-            margin: 0; 
-            color: white; 
-            background-color: var(--dark);
-            background-image: url('background.jpg'); 
-        }
-        
-        nav { 
-            display: flex; 
-            justify-content: space-between; 
+        /* 2. THE BACKGROUND SYSTEM */
+        body {
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 15px 40px; 
-            background: rgba(0,0,0,0.9); 
-            border-bottom: 2px solid #333;
-            position: fixed; 
-            top: 0; width: 100%; 
-            z-index: 1000; 
-            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+            
+            /* Background Stack:
+               Layer 1: SVG Grainy Noise (Matches logo border texture)
+               Layer 2: Radial Vignette (Dark edges)
+               Layer 3: Atmospheric Gradient
+               Layer 4: The Landscape Image 
+            */
+            background: 
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+                radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%),
+                linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
+                url('original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg');
+            
+            background-size: 200px, cover, cover, cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #d1d1d1;
         }
 
-        .brand { display: flex; align-items: center; gap: 12px; }
-        .logo-thumb { width: 40px; height: 40px; border-radius: 5px; background: var(--gold); border: 1px solid var(--accent); object-fit: cover; }
-        .brand-name { font-family: 'Russo One', sans-serif; font-size: 1.4rem; color: var(--accent); text-transform: uppercase; }
-
-        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.8rem; transition: 0.3s; }
-        nav a:hover { color: var(--gold); }
-
-        .hero { 
-            height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://unsplash.com'); 
-            background-size: cover; background-position: center; background-attachment: fixed;
+        /* 3. CENTRAL CONTENT CARD */
+        .container {
+            text-align: center;
+            background: rgba(15, 15, 15, 0.75); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 4rem 2rem;
+            border: 1px solid rgba(142, 148, 154, 0.2); 
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 1);
+            max-width: 480px;
+            width: 85%;
         }
 
-        h1, h2 { font-family: 'Russo One', sans-serif; text-transform: uppercase; }
-        .hero h1 { font-size: 4.5rem; margin: 0; text-shadow: 3px 3px 0px rgba(0,0,0,0.5); }
-
-        .container { 
-            max-width: 1100px; margin: 40px auto; padding: 40px;
-            background: rgba(20, 20, 20, 0.9); border: 1px solid #333;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+        /* 4. TYPOGRAPHY & ASSETS */
+        .logo {
+            width: 220px;
+            height: auto;
+            margin-bottom: 25px;
+            /* Using your exact GitHub filename */
+            content: url('original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg');
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(325px, 1fr)); gap: 20px; margin-top: 30px; }
-        .video-card { background: #000; border: 1px solid #444; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; }
-
-        .btn { 
-            display: inline-block; background: var(--gold); color: black; padding: 15px 30px; 
-            text-decoration: none; font-weight: bold; border: 2px solid black;
-            box-shadow: 4px 4px 0px black; transition: 0.2s; margin-top: 20px;
+        h1 {
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin: 0;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px black; }
 
-        footer { text-align: center; padding: 40px; color: #555; font-size: 0.8rem; }
+        h3 {
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: #8e949a;
+            font-weight: 300;
+            font-size: 0.9rem;
+            margin: 10px 0 0 0;
+        }
+
+        .divider {
+            width: 40px;
+            height: 2px;
+            background: #4a3b2b;
+            margin: 25px auto;
+        }
+
+        p {
+            line-height: 1.8;
+            font-style: italic;
+            color: #999;
+            font-size: 1rem;
+            max-width: 80%;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="brand">
-        <img src="original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg" alt="SFN" class="logo-thumb" onerror="this.style.backgroundColor='#c5a059'"> 
-        <div class="brand-name">Silver Fox Navigator</div>
+    <div class="container">
+        <!-- Logo automatically pulls the same file for consistency -->
+        <img class="logo" alt="Silver Fox Logo">
+        
+        <h1>Silver Fox</h1>
+        <h3>Navigator</h3>
+        
+        <div class="divider"></div>
+        
+        <p>Guided by instinct. <br>Defined by the journey.</p>
     </div>
-    <div>
-        <!-- Buttons linked to IDs below -->
-        <a href="#showcase">Showcase</a>
-        <a href="#mission">Mission</a>
-        <a href="mailto:silverfoxnavigator@outlook.com">Contact</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <div>
-        <h1>Navigator Above</h1>
-        <p style="font-size: 1.2rem; color: var(--gold);">Rugged Aerial Cinematography & Tactical Drone Ops</p>
-    </div>
-</section>
-
-<!-- Mission Section -->
-<div id="mission" class="container">
-    <h2>The Mission</h2>
-    <p>Whether it's deep-woods exploration, extreme events, or industrial surveying, we provide high-end drone footage that captures the raw essence of nature and work. No territory is too rough.</p>
-    <a href="#showcase" class="btn">View Our Intel</a>
-</div>
-
-<!-- Showcase Section with your TikTok Link -->
-<div id="showcase" class="container">
-    <h2>Showcase</h2>
-    <p>Recent reconnaissance and cinematic captures from the field.</p>
-    
-    <div class="video-grid">
-        <div class="video-card">
-            <!-- Your specific TikTok video -->
-            <blockquote class="tiktok-embed" cite="https://tiktok.com">
-                <section>
-                    <a target="_blank" title="@silverfoxnavigator" href="https://tiktok.com">@silverfoxnavigator</a>
-                </section>
-            </blockquote>
-        </div>
-    </div>
-</div>
-
-<footer>
-    &copy; 2026 Silver Fox Navigator. All rights reserved.
-</footer>
-
-<script async src="https://tiktok.com"></script>
 
 </body>
 </html>
