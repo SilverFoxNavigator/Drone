@@ -23,14 +23,14 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* BACKGROUND STACK */
+            /* FIXED BACKGROUND STACK */
             background: 
-                /* Rugged Grain Texture */
+                /* Grain Texture Overlay */
                 url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjAwIDIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48ZmlsdGVyIGlkPSdub2lzZUZpbHRlcic+PGZlVHVyYnVsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzAuNjUnIG51bU9jdGF2ZXM9JzMnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCgjbm9pc2VGaWx0ZXIpJy8+PC9zdmc+"),
                 radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                /* BACKGROUND FILE */
-                <img src="https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Background1" alt="Drone Logo" width="200">; 
+                /* MAIN BACKGROUND IMAGE */
+                url("https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Background1"); 
             
             background-size: 200px, cover, cover, cover;
             background-position: center;
@@ -61,7 +61,6 @@
             margin-bottom: 25px;
             border-radius: 50%;
             border: 2px solid #8e949a;
-            /* Ensures logo doesn't disappear if background fails */
             background-color: #1a1a1a; 
         }
 
@@ -78,16 +77,14 @@
             color: #ffffff;
         }
 
-        /* FIXED NAVIGATOR WIDTH */
         h3 {
             text-transform: uppercase;
             color: #8e949a;
             font-size: 0.95rem;
             margin: 10px 0 0 0;
             font-weight: normal;
-            /* Adjusted letter spacing to match Silver Fox width better */
             letter-spacing: 0.65em; 
-            text-indent: 0.65em; /* Offsets the last letter's spacing for perfect centering */
+            text-indent: 0.65em; 
             width: 100%;
             text-align: center;
         }
@@ -110,8 +107,10 @@
 <body>
 
     <div class="container">
-        <!-- LOGO FILE -->
-        <img src="https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Logo1" alt="Drone Logo" width="200">
+        <!-- LOGO IMAGE -->
+        <img src="https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Logo1" 
+             alt="Silver Fox Logo" 
+             class="logo">
         
         <div class="text-group">
             <h1>Silver Fox</h1>
