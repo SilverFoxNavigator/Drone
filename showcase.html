@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase - Silver Fox</title>
     
+    <!-- FIXED: Correct Google Font link -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -46,9 +47,31 @@
             font-weight: 300;
             letter-spacing: 12px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             color: #d1d1d1;
             font-size: 1.5rem;
+        }
+
+        /* NEW: Inquire Button Style */
+        .contact-btn {
+            display: inline-block;
+            margin: 20px 0 60px 0;
+            padding: 15px 40px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            border: 2px solid #fff;
+        }
+
+        .contact-btn:hover {
+            background: transparent;
+            color: #fff;
+            transform: translateY(-3px);
         }
 
         /* RAW VIDEO GRID */
@@ -88,7 +111,6 @@
 
         .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); margin-bottom: 10px;}
 
-        /* TIKTOK PROFILE LINK BUTTON */
         .tiktok-link {
             display: inline-block;
             margin-bottom: 40px;
@@ -129,7 +151,10 @@
     </header>
 
     <div class="content">
-        <h2 class="section-title">Raw Footage</h2>
+        <h2 class="section-title">Visual Showcase</h2>
+
+        <!-- ADDED CONTACT BUTTON AT THE TOP -->
+        <a href="mailto:silverfoxnavigator@outlook.com" class="contact-btn">Inquire for Work</a>
 
         <div class="video-grid">
             <div class="video-item"><video controls muted loop><source src="video1.mp4" type="video/mp4"></video><div class="video-label">Clip 01</div></div>
@@ -146,13 +171,12 @@
         <div class="tiktok-section">
             <h2 class="section-title tiktok-title">Edited Content</h2>
             
-            <!-- LINK UPDATED TO @SILVERFOXNAVIGATOR -->
             <a href="https://tiktok.com" target="_blank" class="tiktok-link">
                 Follow @SilverFoxNavigator
             </a>
 
             <div class="tiktok-grid">
-                <!-- Replace VIDEO_ID with the specific numbers from your favorite TikTok clips -->
+                <!-- Replace VIDEO_ID with actual numbers from your TikTok clips -->
                 <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
                     <section></section>
                 </blockquote>
