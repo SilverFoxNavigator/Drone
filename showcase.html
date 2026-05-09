@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase - Silver Fox</title>
     
-    <!-- FIXED: Correct Google Font link -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -69,7 +68,6 @@
 
         .contact-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
 
-        /* PORTRAIT OPTIMISED GRID */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -87,7 +85,7 @@
 
         .video-item:hover { border-color: rgba(255,255,255,0.5); transform: translateY(-5px); }
 
-        /* Forces portrait ratio for raw videos */
+        /* Styles for Raw MP4s */
         video { 
             width: 100%; 
             aspect-ratio: 9 / 16; 
@@ -96,11 +94,17 @@
             border-radius: 8px; 
         }
 
+        /* Styles for TikTok Iframes */
+        .tiktok-iframe {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 8px;
+            border: none;
+        }
+
         .video-label { margin-top: 12px; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #8e949a; }
 
-        /* TIKTOK SECTION */
         .tiktok-section { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); }
-        .tiktok-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
         .tiktok-link {
             display: inline-block; margin-bottom: 40px; padding: 12px 30px;
             border: 2px solid #ff0050; border-radius: 50px; color: #fff;
@@ -125,15 +129,13 @@
         <a href="mailto:silverfoxnavigator@outlook.com" class="contact-btn">Inquire for Work</a>
 
         <div class="video-grid">
-            <!-- SLOT 1: Fountains Abbey (Portrait Embed) -->
+            <!-- Slot 1: Fountains Abbey (Using reliable Iframe) -->
             <div class="video-item">
-                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7367332210515152161">
-                    <section></section>
-                </blockquote>
+                <iframe class="tiktok-iframe" src="https://tiktok.com" allowfullscreen></iframe>
                 <div class="video-label">Fountains Abbey 🏛</div>
             </div>
 
-            <!-- RAW PORTRAIT VIDEOS -->
+            <!-- RAW PORTRAIT VIDEOS (Ensure these files exist in your GitHub) -->
             <div class="video-item"><video controls muted loop><source src="video2.mp4" type="video/mp4"></video><div class="video-label">Clip 02</div></div>
             <div class="video-item"><video controls muted loop><source src="video3.mp4" type="video/mp4"></video><div class="video-label">Clip 03</div></div>
             <div class="video-item"><video controls muted loop><source src="video4.mp4" type="video/mp4"></video><div class="video-label">Clip 04</div></div>
@@ -146,14 +148,8 @@
         <div class="tiktok-section">
             <h2 class="section-title" style="color:#ff0050">Edited Content</h2>
             <a href="https://tiktok.com" target="_blank" class="tiktok-link">Follow @SilverFoxNavigator</a>
-            <div class="tiktok-grid">
-                <!-- Additional TikToks can be pasted here -->
-            </div>
         </div>
     </div>
-
-    <!-- TikTok Embed Script -->
-    <script async src="https://tiktok.com"></script>
 
 </body>
 </html>
