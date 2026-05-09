@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showcase - Silver Fox</title>
     
-    <!-- FIXED: Correct Google Font link -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
         body { 
             margin: 0; 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Background1.jpeg'); 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background1.jpeg'); 
             background-size: cover; 
             background-attachment: fixed;
             font-family: 'Montserrat', sans-serif; 
@@ -19,12 +18,11 @@
             overflow-x: hidden;
         }
 
-        /* HEADER SECTION */
         header { 
             display: flex; 
             align-items: center; 
             padding: 15px 30px; 
-            background: rgba(10, 10, 10, 0.9); 
+            background: rgba(10, 10, 10, 0.95); 
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -34,90 +32,72 @@
         }
 
         .logo-small { 
-            width: 45px; 
-            height: 45px; 
-            border-radius: 50%; 
-            overflow: hidden; 
-            margin-right: 15px; 
+            width: 45px; height: 45px; border-radius: 50%; 
+            overflow: hidden; margin-right: 15px; 
             border: 1px solid rgba(255,255,255,0.5); 
         }
 
         .logo-small img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .brand h1 { 
-            font-size: 0.9rem; 
-            margin: 0; 
-            letter-spacing: 4px; 
-            text-transform: uppercase;
-        }
+        .brand h1 { font-size: 0.9rem; margin: 0; letter-spacing: 4px; text-transform: uppercase; }
 
-        /* VIDEO GRID SECTION */
-        .content { 
-            padding: 60px 20px; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            text-align: center; 
-        }
+        .content { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
 
         .section-title {
             font-weight: 300;
             letter-spacing: 12px;
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: #d1d1d1;
+            font-size: 1.5rem;
         }
 
+        /* RAW VIDEO GRID */
         .video-grid {
             display: grid;
-            /* Creates 3 columns on desktop, 1 on mobile */
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-bottom: 100px;
         }
 
         .video-item {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px;
-            border-radius: 4px;
             transition: transform 0.3s ease;
         }
 
-        .video-item:hover {
-            transform: scale(1.02);
-            border-color: rgba(255, 255, 255, 0.4);
+        .video-item:hover { transform: scale(1.02); border-color: rgba(255, 255, 255, 0.4); }
+
+        video { width: 100%; display: block; border-radius: 2px; }
+
+        .video-label { margin-top: 15px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #8e949a; }
+
+        /* TIKTOK SECTION */
+        .tiktok-section {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.2);
         }
 
-        video {
-            width: 100%;
-            display: block;
-            border-radius: 2px;
+        .tiktok-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .video-label {
-            margin-top: 15px;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8e949a;
-        }
+        /* TIKTOK Branding Color */
+        .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); }
 
         .back-home { 
-            color: #fff; 
-            text-decoration: none; 
-            font-size: 0.7rem; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            margin-top: 80px; 
-            display: inline-block; 
+            color: #fff; text-decoration: none; font-size: 0.7rem; 
+            letter-spacing: 2px; text-transform: uppercase; 
+            margin: 80px 0; display: inline-block; 
             border: 1px solid rgba(255,255,255,0.3);
-            padding: 12px 25px;
-            transition: 0.3s;
+            padding: 12px 25px; transition: 0.3s;
         }
 
-        .back-home:hover {
-            background: #fff;
-            color: #000;
-        }
+        .back-home:hover { background: #fff; color: #000; }
     </style>
 </head>
 <body>
@@ -128,84 +108,43 @@
     </header>
 
     <div class="content">
-        <h2 class="section-title">Visual Showcase</h2>
+        <h2 class="section-title">Raw Footage</h2>
 
         <div class="video-grid">
-            <!-- Video 1 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Alpha</div>
-            </div>
+            <!-- Row 1 -->
+            <div class="video-item"><video controls muted loop><source src="video1.mp4" type="video/mp4"></video><div class="video-label">Clip 01</div></div>
+            <div class="video-item"><video controls muted loop><source src="video2.mp4" type="video/mp4"></video><div class="video-label">Clip 02</div></div>
+            <div class="video-item"><video controls muted loop><source src="video3.mp4" type="video/mp4"></video><div class="video-label">Clip 03</div></div>
+            <!-- Row 2 -->
+            <div class="video-item"><video controls muted loop><source src="video4.mp4" type="video/mp4"></video><div class="video-label">Clip 04</div></div>
+            <div class="video-item"><video controls muted loop><source src="video5.mp4" type="video/mp4"></video><div class="video-label">Clip 05</div></div>
+            <div class="video-item"><video controls muted loop><source src="video6.mp4" type="video/mp4"></video><div class="video-label">Clip 06</div></div>
+            <!-- Row 3 -->
+            <div class="video-item"><video controls muted loop><source src="video7.mp4" type="video/mp4"></video><div class="video-label">Clip 07</div></div>
+            <div class="video-item"><video controls muted loop><source src="video8.mp4" type="video/mp4"></video><div class="video-label">Clip 08</div></div>
+            <div class="video-item"><video controls muted loop><source src="video9.mp4" type="video/mp4"></video><div class="video-label">Clip 09</div></div>
+        </div>
 
-            <!-- Video 2 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Bravo</div>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Charlie</div>
-            </div>
-
-            <!-- Video 4 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video4.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Delta</div>
-            </div>
-
-            <!-- Video 5 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video5.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Echo</div>
-            </div>
-
-            <!-- Video 6 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video6.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Foxtrot</div>
-            </div>
-
-            <!-- Video 7 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video7.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Golf</div>
-            </div>
-
-            <!-- Video 8 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video8.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project Hotel</div>
-            </div>
-
-            <!-- Video 9 -->
-            <div class="video-item">
-                <video controls muted loop playsinline>
-                    <source src="video9.mp4" type="video/mp4">
-                </video>
-                <div class="video-label">Project India</div>
+        <div class="tiktok-section">
+            <h2 class="section-title tiktok-title">Edited Content</h2>
+            <div class="tiktok-grid">
+                <!-- TikTok 1: Paste your video link and ID below -->
+                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
+                    <section></section>
+                </blockquote>
+                
+                <!-- TikTok 2: Paste your video link and ID below -->
+                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
+                    <section></section>
+                </blockquote>
             </div>
         </div>
 
         <a href="index.html" class="back-home">Return to Home</a>
     </div>
+
+    <!-- TikTok Embed Script -->
+    <script async src="https://tiktok.com"></script>
 
 </body>
 </html>
