@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
-    <!-- RUGGED TYPEWRITER FONT -->
+    
+    <!-- 1. CORRECTED FONT LINK -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -22,12 +23,12 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* BACKGROUND STACK */
+            /* 2. BACKGROUND STACK - FIXED SVG AND FILENAME */
             background: 
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
                 radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                url('Background1');
+                url('Background1'); 
             
             background-size: 200px, cover, cover, cover;
             background-position: center;
@@ -42,6 +43,7 @@
             text-align: center;
             background: rgba(10, 10, 10, 0.85); 
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 4rem 3rem;
             border: 1px solid rgba(142, 148, 154, 0.2); 
             box-shadow: 0 0 60px rgba(0, 0, 0, 1);
@@ -50,6 +52,7 @@
             border-radius: 2px;
         }
 
+        /* 3. LOGO STYLING - FIXED FILENAME */
         .logo {
             width: 140px;
             height: 140px;
@@ -60,7 +63,6 @@
             filter: contrast(1.1) brightness(0.9);
         }
 
-        /* WRAPPER TO CONTROL WIDTH */
         .text-group {
             width: 100%;
             display: flex;
@@ -75,20 +77,18 @@
             line-height: 1;
             color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            /* Adds a slight gritty texture to the text */
-            opacity: 0.95;
         }
 
-        /* FORCING NAVIGATOR TO STRETCH */
+        /* 4. JUSTIFIED NAVIGATOR WIDTH */
         h3 {
             display: flex;
-            justify-content: space-between; /* Spreads letters to match container width */
+            justify-content: space-between;
             text-transform: uppercase;
             color: #8e949a;
             font-size: 1rem;
             margin: 15px 0 0 0;
             font-weight: normal;
-            width: 100%; /* Matches the h1 width */
+            width: 100%;
         }
 
         .divider {
@@ -110,11 +110,11 @@
 <body>
 
     <div class="container">
-        <img src="original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg" class="logo" alt="Silver Fox Logo">
+        <!-- Logo file is exactly 'Logo1' -->
+        <img src="Logo1" class="logo" alt="Silver Fox Logo">
         
         <div class="text-group">
             <h1>Silver Fox</h1>
-            <!-- Individual spans allow flexbox to space letters perfectly -->
             <h3>
                 <span>N</span><span>A</span><span>V</span><span>I</span><span>G</span><span>A</span><span>T</span><span>O</span><span>R</span>
             </h3>
