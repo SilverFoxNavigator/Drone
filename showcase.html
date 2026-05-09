@@ -86,8 +86,29 @@
             gap: 20px;
         }
 
-        /* TIKTOK Branding Color */
-        .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); }
+        .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); margin-bottom: 10px;}
+
+        /* TIKTOK PROFILE LINK BUTTON */
+        .tiktok-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            padding: 12px 30px;
+            border: 2px solid #ff0050;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
+
+        .tiktok-link:hover {
+            background: #ff0050;
+            box-shadow: 0 0 25px rgba(255, 0, 80, 0.8);
+            transform: translateY(-3px);
+        }
 
         .back-home { 
             color: #fff; text-decoration: none; font-size: 0.7rem; 
@@ -111,15 +132,12 @@
         <h2 class="section-title">Raw Footage</h2>
 
         <div class="video-grid">
-            <!-- Row 1 -->
             <div class="video-item"><video controls muted loop><source src="video1.mp4" type="video/mp4"></video><div class="video-label">Clip 01</div></div>
             <div class="video-item"><video controls muted loop><source src="video2.mp4" type="video/mp4"></video><div class="video-label">Clip 02</div></div>
             <div class="video-item"><video controls muted loop><source src="video3.mp4" type="video/mp4"></video><div class="video-label">Clip 03</div></div>
-            <!-- Row 2 -->
             <div class="video-item"><video controls muted loop><source src="video4.mp4" type="video/mp4"></video><div class="video-label">Clip 04</div></div>
             <div class="video-item"><video controls muted loop><source src="video5.mp4" type="video/mp4"></video><div class="video-label">Clip 05</div></div>
             <div class="video-item"><video controls muted loop><source src="video6.mp4" type="video/mp4"></video><div class="video-label">Clip 06</div></div>
-            <!-- Row 3 -->
             <div class="video-item"><video controls muted loop><source src="video7.mp4" type="video/mp4"></video><div class="video-label">Clip 07</div></div>
             <div class="video-item"><video controls muted loop><source src="video8.mp4" type="video/mp4"></video><div class="video-label">Clip 08</div></div>
             <div class="video-item"><video controls muted loop><source src="video9.mp4" type="video/mp4"></video><div class="video-label">Clip 09</div></div>
@@ -127,14 +145,19 @@
 
         <div class="tiktok-section">
             <h2 class="section-title tiktok-title">Edited Content</h2>
+            
+            <!-- LINK UPDATED TO @SILVERFOXNAVIGATOR -->
+            <a href="https://tiktok.com" target="_blank" class="tiktok-link">
+                Follow @SilverFoxNavigator
+            </a>
+
             <div class="tiktok-grid">
-                <!-- TikTok 1: Paste your video link and ID below -->
-                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
+                <!-- Replace VIDEO_ID with the specific numbers from your favorite TikTok clips -->
+                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
                     <section></section>
                 </blockquote>
                 
-                <!-- TikTok 2: Paste your video link and ID below -->
-                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
+                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;">
                     <section></section>
                 </blockquote>
             </div>
@@ -143,7 +166,6 @@
         <a href="index.html" class="back-home">Return to Home</a>
     </div>
 
-    <!-- TikTok Embed Script -->
     <script async src="https://tiktok.com"></script>
 
 </body>
