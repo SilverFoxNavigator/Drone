@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
+    <!-- RUGGED TYPEWRITER FONT -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
     <style>
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevents unwanted scrolling */
+            overflow: hidden;
+            background-color: #0a0a0a;
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Georgia', serif;
-            background-color: #0a0a0a;
+            font-family: 'Special Elite', serif;
             
-            /* BACKGROUND LAYERS */
+            /* BACKGROUND STACK */
             background: 
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
-                radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%),
+                radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                url('Background.jpeg');
+                url('original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg');
             
             background-size: 200px, cover, cover, cover;
             background-position: center;
@@ -33,73 +36,93 @@
         }
 
         .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            background: rgba(15, 15, 15, 0.8); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 3rem 2rem;
+            background: rgba(10, 10, 10, 0.85); 
+            backdrop-filter: blur(10px);
+            padding: 4rem 3rem;
             border: 1px solid rgba(142, 148, 154, 0.2); 
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 1);
-            max-width: 400px;
-            width: 80%;
-            border-radius: 8px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 1);
+            max-width: 500px;
+            width: 85%;
+            border-radius: 2px;
         }
 
-        /* FIXED LOGO STYLING */
         .logo {
-            width: 150px; /* Force small width */
-            height: 150px; /* Keep it square */
-            object-fit: cover; /* Ensure it doesn't stretch */
-            margin-bottom: 20px;
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            margin-bottom: 30px;
             border-radius: 50%;
             border: 2px solid #8e949a;
-            display: inline-block;
+            filter: contrast(1.1) brightness(0.9);
+        }
+
+        /* WRAPPER TO CONTROL WIDTH */
+        .text-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         h1 {
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #ffffff;
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.8rem;
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            /* Adds a slight gritty texture to the text */
+            opacity: 0.95;
         }
 
+        /* FORCING NAVIGATOR TO STRETCH */
         h3 {
-            letter-spacing: 6px;
+            display: flex;
+            justify-content: space-between; /* Spreads letters to match container width */
             text-transform: uppercase;
             color: #8e949a;
-            font-weight: 300;
-            font-size: 0.8rem;
-            margin: 10px 0 0 0;
+            font-size: 1rem;
+            margin: 15px 0 0 0;
+            font-weight: normal;
+            width: 100%; /* Matches the h1 width */
         }
 
         .divider {
-            width: 40px;
+            width: 100%;
             height: 1px;
-            background: #4a3b2b;
-            margin: 20px auto;
+            background: linear-gradient(90deg, transparent, #4a3b2b, transparent);
+            margin: 25px auto;
         }
 
         p {
-            line-height: 1.6;
-            font-style: italic;
-            color: #999;
-            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #888;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Using standard image tag for better control -->
         <img src="original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg" class="logo" alt="Silver Fox Logo">
         
-        <h1>Silver Fox</h1>
-        <h3>Navigator</h3>
+        <div class="text-group">
+            <h1>Silver Fox</h1>
+            <!-- Individual spans allow flexbox to space letters perfectly -->
+            <h3>
+                <span>N</span><span>A</span><span>V</span><span>I</span><span>G</span><span>A</span><span>T</span><span>O</span><span>R</span>
+            </h3>
+        </div>
         
         <div class="divider"></div>
         
-        <p>Guided by instinct. <br>Defined by the journey.</p>
+        <p>Guided by instinct.<br>Defined by the journey.</p>
     </div>
 
 </body>
