@@ -21,7 +21,7 @@
         header { 
             display: flex; 
             align-items: center; 
-            padding: 0; 
+            padding: 10px 25px; 
             background: rgba(10, 10, 10, 0.95); 
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
@@ -29,59 +29,71 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            height: 70px;
         }
 
-        /* HOME ICON SECTION */
         .home-icon {
             text-decoration: none;
             color: #fff;
             font-size: 1.5rem;
-            padding: 0 25px;
+            margin-right: 20px;
+            padding-right: 20px;
             border-right: 1px solid rgba(255,255,255,0.2);
-            line-height: 70px;
-            height: 70px;
             transition: 0.3s;
         }
 
         .home-icon:hover { color: #8e949a; }
 
-        /* BANNER SECTION (Replaces Brand Text) */
-        .banner-box {
-            width: 25%;
-            height: 100%;
-            background: url('banner1.jpeg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-            position: relative;
-            border-right: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Dark tint so logo stands out on the banner image */
-        .banner-box::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: 1;
-        }
-
+        /* LOGO: Height locked to 50px */
         .logo-small { 
-            width: 45px; 
-            height: 45px; 
+            width: 50px; 
+            height: 50px; 
             border-radius: 50%; 
             overflow: hidden; 
-            border: 1px solid #fff;
-            position: relative;
-            z-index: 2;
+            margin-right: 15px; 
+            border: 1px solid rgba(255,255,255,0.5); 
+            flex-shrink: 0;
         }
 
         .logo-small img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* CONTENT STYLES */
+        /* BANNER STRIP: To the right, same height as logo */
+        .banner-strip {
+            height: 50px;
+            width: 320px;
+            background: url('banner1.jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Overlay to keep text readable */
+        .banner-strip::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+
+        .brand-text {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            white-space: nowrap;
+            color: #fff;
+        }
+
+        /* CONTENT */
         .content { padding: 40px 20px; max-width: 1400px; margin: 0 auto; text-align: center; }
         .section-title { font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 20px; color: #d1d1d1; font-size: 1.5rem; }
 
@@ -102,7 +114,7 @@
 
         .contact-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
 
-        /* VIDEO GRID */
+        /* 2x4 GRID */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr); 
@@ -123,14 +135,13 @@
         video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 6px; }
         .video-label { margin-top: 10px; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: #8e949a; }
 
-        /* RESPONSIVE LAYOUT */
         @media (max-width: 1024px) {
             .video-grid { grid-template-columns: repeat(2, 1fr); }
-            .banner-box { width: 40%; } /* Widens banner on tablets */
         }
         @media (max-width: 600px) {
             .video-grid { grid-template-columns: 1fr; }
-            .banner-box { width: 60%; } /* Widens banner on mobile */
+            .banner-strip { width: 200px; } /* Shrinks on mobile */
+            .brand-text { font-size: 0.6rem; letter-spacing: 1px; }
         }
     </style>
 </head>
@@ -139,10 +150,12 @@
     <header>
         <a href="index.html" class="home-icon" title="Return Home">⌂</a>
         
-        <div class="banner-box">
-            <div class="logo-small">
-                <img src="Logo1.jpeg" alt="Silver Fox Logo">
-            </div>
+        <div class="logo-small">
+            <img src="Logo1.jpeg" alt="Logo">
+        </div>
+
+        <div class="banner-strip">
+            <h1 class="brand-text">Silver Fox Navigator</h1>
         </div>
     </header>
 
@@ -162,8 +175,6 @@
             <div class="video-item"><video controls muted loop><source src="video8.mp4" type="video/mp4"></video><div class="video-label">Clip 08</div></div>
         </div>
     </div>
-
-    <script async src="https://tiktok.com"></script>
 
 </body>
 </html>
