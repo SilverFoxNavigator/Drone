@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
     
-    <!-- FIX: Correct Google Font Link -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -13,6 +12,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
+            width: 100%;
             overflow: hidden;
             background-color: #0a0a0a;
         }
@@ -23,17 +23,117 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* FIXED: Use url() instead of <img> for background */
-            background: 
+            /* FULL SCREEN BACKGROUND */
+            background-image: 
+                /* Rugged Grain Texture Overlay */
                 url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjAwIDIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48ZmlsdGVyIGlkPSdub2lzZUZpbHRlcic+PGZlVHVyYnVsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzAuNjUnIG51bU9jdGF2ZXM9JzMnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCgjbm9pc2VGaWx0ZXIpJy8+PC9zdmc+"),
-                radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
-                linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                url("https://githubusercontent.com"); 
+                /* Vignette effect */
+                radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%),
+                /* Color grading overlay */
+                linear-gradient(180deg, rgba(13, 13, 13, 0.5) 0%, rgba(30, 25, 20, 0.7) 100%),
+                /* Background1 - Fullscreen */
+                url("https://github.com");
             
-            background-size: 200px, cover, cover, cover;
+            background-size: 150px, cover, cover, cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            color: #d1d1d1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.85); 
+            backdrop-filter: blur(12px);
+            padding: 4rem 3rem;
+            border: 1px solid rgba(142, 148, 154, 0.15); 
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+            max-width: 480px;
+            width: 90%;
+            border-radius: 4px;
+        }
+
+        .logo-frame {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(142, 148, 154, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #111;
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 2.8rem;
+            line-height: 1;
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            color: #8e949a;
+            font-size: 1rem;
+            margin: 12px 0 0 0;
+            font-weight: normal;
+            letter-spacing: 0.7em; 
+            text-indent: 0.7em; 
+            width: 100%;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background: rgba(74, 59, 43, 0.6);
+            margin: 30px auto;
+        }
+
+        p {
+            line-height: 2;
+            color: #a1a1a1;
+            font-size: 1rem;
+            margin: 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo1 Placement -->
+        <div class="logo-frame">
+            <img src="https://github.com" 
+                 alt="Silver Fox Logo" 
+                 class="logo-img">
+        </div>
+        
+        <div class="text-group">
+            <h1>Silver Fox</h1>
+            <h3>NAVIGATOR</h3>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <p>Guided by instinct.<br>Defined by the journey.</p>
+    </div>
+
+</body>
+</html>
             color: #d1d1d1;
         }
 
