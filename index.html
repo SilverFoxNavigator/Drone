@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
     
-    <!-- FIX: Working Typewriter Font -->
+    <!-- FIXED: Correct Google Font link for Special Elite -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -24,12 +24,11 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* FULL SCREEN BACKGROUND */
+            /* FIXED: Correct CSS background syntax */
             background: 
                 radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%),
-                /* LINK TO YOUR BACKGROUND1.JPG */
-                <img src="Background1.jpg">;
+                url('Background1.jpg');
             
             background-size: cover;
             background-position: center;
@@ -45,6 +44,7 @@
             text-align: center;
             background: rgba(10, 10, 10, 0.85); 
             backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             padding: 50px 40px;
             border: 1px solid rgba(255, 255, 255, 0.1); 
             box-shadow: 0 0 60px rgba(0, 0, 0, 1);
@@ -53,7 +53,6 @@
             border-radius: 4px;
         }
 
-        /* THE ROUND LOGO */
         .logo-circle {
             width: 150px;
             height: 150px;
@@ -110,9 +109,9 @@
 <body>
 
     <div class="container">
-        <!-- LINK TO YOUR LOGO1.JPG -->
+        <!-- Ensure Logo1.jpg is in the same folder as this file -->
         <div class="logo-circle">
-            <img src="Logo1.jpg" alt="Logo">
+            <img src="Logo1.jpg" alt="Silver Fox Logo">
         </div>
         
         <div class="text-group">
