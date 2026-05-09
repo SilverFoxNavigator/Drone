@@ -5,27 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
     <style>
-        /* 1. GLOBAL RESET */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #0a0a0a;
+            overflow: hidden; /* Prevents unwanted scrolling */
         }
 
-        /* 2. THE BACKGROUND SYSTEM */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
             
-            /* Background Stack:
-               Layer 1: SVG Grainy Noise (Matches logo border texture)
-               Layer 2: Radial Vignette (Dark edges)
-               Layer 3: Atmospheric Gradient
-               Layer 4: The Landscape Image 
-            */
+            /* BACKGROUND LAYERS */
             background: 
                 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
                 radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%),
@@ -38,70 +32,67 @@
             color: #d1d1d1;
         }
 
-        /* 3. CENTRAL CONTENT CARD */
         .container {
             text-align: center;
-            background: rgba(15, 15, 15, 0.75); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 4rem 2rem;
+            background: rgba(15, 15, 15, 0.8); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 3rem 2rem;
             border: 1px solid rgba(142, 148, 154, 0.2); 
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 1);
-            max-width: 480px;
-            width: 85%;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 1);
+            max-width: 400px;
+            width: 80%;
+            border-radius: 8px;
         }
 
-        /* 4. TYPOGRAPHY & ASSETS */
+        /* FIXED LOGO STYLING */
         .logo {
-            width: 220px;
-            height: auto;
-            margin-bottom: 25px;
-            /* Using your exact GitHub filename */
-            content: url('original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg');
+            width: 150px; /* Force small width */
+            height: 150px; /* Keep it square */
+            object-fit: cover; /* Ensure it doesn't stretch */
+            margin-bottom: 20px;
             border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid #8e949a;
+            display: inline-block;
         }
 
         h1 {
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #ffffff;
             margin: 0;
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-size: 2rem;
         }
 
         h3 {
-            letter-spacing: 8px;
+            letter-spacing: 6px;
             text-transform: uppercase;
             color: #8e949a;
             font-weight: 300;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin: 10px 0 0 0;
         }
 
         .divider {
             width: 40px;
-            height: 2px;
+            height: 1px;
             background: #4a3b2b;
-            margin: 25px auto;
+            margin: 20px auto;
         }
 
         p {
-            line-height: 1.8;
+            line-height: 1.6;
             font-style: italic;
             color: #999;
-            font-size: 1rem;
-            max-width: 80%;
-            margin: 0 auto;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo automatically pulls the same file for consistency -->
-        <img class="logo" alt="Silver Fox Logo">
+        <!-- Using standard image tag for better control -->
+        <img src="original-B74A522A-201F-4780-89B2-BE67E5B11609.jpeg" class="logo" alt="Silver Fox Logo">
         
         <h1>Silver Fox</h1>
         <h3>Navigator</h3>
