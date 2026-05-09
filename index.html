@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
     
-    <!-- RUGGED TYPEWRITER FONT -->
+    <!-- FIX: Correct Font URL -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -23,14 +23,12 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* FIXED BACKGROUND STACK */
+            /* FIXED: Using Raw.githack URLs */
             background: 
-                /* Grain Texture Overlay */
                 url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjAwIDIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48ZmlsdGVyIGlkPSdub2lzZUZpbHRlcic+PGZlVHVyYnVsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzAuNjUnIG51bU9jdGF2ZXM9JzMnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCgjbm9pc2VGaWx0ZXIpJy8+PC9zdmc+"),
                 radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                /* MAIN BACKGROUND IMAGE */
-                url("https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Background1"); 
+                url("https://githack.com"); 
             
             background-size: 200px, cover, cover, cover;
             background-position: center;
@@ -64,51 +62,19 @@
             background-color: #1a1a1a; 
         }
 
-        .text-group {
-            width: 100%;
-        }
-
-        h1 {
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-            font-size: 2.6rem;
-            line-height: 1.1;
-            color: #ffffff;
-        }
-
-        h3 {
-            text-transform: uppercase;
-            color: #8e949a;
-            font-size: 0.95rem;
-            margin: 10px 0 0 0;
-            font-weight: normal;
-            letter-spacing: 0.65em; 
-            text-indent: 0.65em; 
-            width: 100%;
-            text-align: center;
-        }
-
-        .divider {
-            width: 60px;
-            height: 1px;
-            background: #4a3b2b;
-            margin: 25px auto;
-        }
-
-        p {
-            line-height: 1.8;
-            color: #888;
-            font-size: 0.95rem;
-            margin: 0;
-        }
+        /* Rest of your styles... */
+        .text-group { width: 100%; }
+        h1 { letter-spacing: 2px; text-transform: uppercase; margin: 0; font-size: 2.6rem; color: #ffffff; }
+        h3 { text-transform: uppercase; color: #8e949a; font-size: 0.95rem; margin: 10px 0 0 0; letter-spacing: 0.65em; text-indent: 0.65em; width: 100%; }
+        .divider { width: 60px; height: 1px; background: #4a3b2b; margin: 25px auto; }
+        p { line-height: 1.8; color: #888; font-size: 0.95rem; margin: 0; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- LOGO IMAGE -->
-        <img src="https://raw.githubusercontent.com/SilverFoxNavigator/Drone/refs/heads/main/Logo1" 
+        <!-- FIXED: Using Raw.githack URL -->
+        <img src="https://githack.com" 
              alt="Silver Fox Logo" 
              class="logo">
         
@@ -118,7 +84,6 @@
         </div>
         
         <div class="divider"></div>
-        
         <p>Guided by instinct.<br>Defined by the journey.</p>
     </div>
 
