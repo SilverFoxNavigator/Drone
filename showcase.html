@@ -18,7 +18,6 @@
             overflow-x: hidden;
         }
 
-        /* HEADER: Updated to include Home Icon on the left */
         header { 
             display: flex; 
             align-items: center; 
@@ -32,7 +31,6 @@
             z-index: 1000;
         }
 
-        /* HOME ICON LINK */
         .home-icon {
             text-decoration: none;
             color: #fff;
@@ -41,32 +39,14 @@
             padding-right: 20px;
             border-right: 1px solid rgba(255,255,255,0.2);
             line-height: 1;
-            transition: 0.3s;
         }
 
-        .home-icon:hover {
-            color: #8e949a;
-        }
-
-        .logo-small { 
-            width: 45px; height: 45px; border-radius: 50%; 
-            overflow: hidden; margin-right: 15px; 
-            border: 1px solid rgba(255,255,255,0.5); 
-        }
-
+        .logo-small { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; margin-right: 15px; border: 1px solid rgba(255,255,255,0.5); }
         .logo-small img { width: 100%; height: 100%; object-fit: cover; }
         .brand h1 { font-size: 0.9rem; margin: 0; letter-spacing: 4px; text-transform: uppercase; }
 
         .content { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
-
-        .section-title {
-            font-weight: 300;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            color: #d1d1d1;
-            font-size: 1.5rem;
-        }
+        .section-title { font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin-bottom: 20px; color: #d1d1d1; font-size: 1.5rem; }
 
         .contact-btn {
             display: inline-block;
@@ -83,8 +63,6 @@
             border: 2px solid #fff;
         }
 
-        .contact-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
-
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -96,34 +74,26 @@
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 10px;
-            transition: transform 0.3s ease;
+            border-radius: 4px;
         }
 
-        .video-item:hover { transform: scale(1.02); border-color: rgba(255, 255, 255, 0.4); }
-
         video { width: 100%; display: block; border-radius: 2px; }
-
         .video-label { margin-top: 15px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #8e949a; }
 
         .tiktok-section { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); }
         .tiktok-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .tiktok-title { color: #ff0050; text-shadow: 0 0 10px rgba(0,242,234,0.5); margin-bottom: 10px;}
         .tiktok-link {
             display: inline-block; margin-bottom: 40px; padding: 12px 30px;
             border: 2px solid #ff0050; border-radius: 50px; color: #fff;
             text-decoration: none; font-size: 0.8rem; font-weight: 700;
             letter-spacing: 2px; text-transform: uppercase; transition: 0.3s ease;
         }
-        .tiktok-link:hover { background: #ff0050; box-shadow: 0 0 25px rgba(255, 0, 80, 0.8); transform: translateY(-3px); }
-
     </style>
 </head>
 <body>
 
     <header>
-        <!-- HOME ICON LINK -->
-        <a href="index.html" class="home-icon" title="Return Home">⌂</a>
-        
+        <a href="index.html" class="home-icon">⌂</a>
         <div class="logo-small"><img src="Logo1.jpeg" alt="Logo"></div>
         <div class="brand"><h1>Silver Fox Navigator</h1></div>
     </header>
@@ -134,7 +104,15 @@
         <a href="mailto:silverfoxnavigator@outlook.com" class="contact-btn">Inquire for Work</a>
 
         <div class="video-grid">
-            <div class="video-item"><video controls muted loop><source src="video1.mp4" type="video/mp4"></video><div class="video-label">Clip 01</div></div>
+            <!-- Slot 1: Fountains Abbey TikTok Embed -->
+            <div class="video-item">
+                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7367332210515152161">
+                    <section></section>
+                </blockquote>
+                <div class="video-label">Fountains Abbey Drone View</div>
+            </div>
+
+            <!-- Other slots remain as local MP4 files or more embeds -->
             <div class="video-item"><video controls muted loop><source src="video2.mp4" type="video/mp4"></video><div class="video-label">Clip 02</div></div>
             <div class="video-item"><video controls muted loop><source src="video3.mp4" type="video/mp4"></video><div class="video-label">Clip 03</div></div>
             <div class="video-item"><video controls muted loop><source src="video4.mp4" type="video/mp4"></video><div class="video-label">Clip 04</div></div>
@@ -146,15 +124,12 @@
         </div>
 
         <div class="tiktok-section">
-            <h2 class="section-title tiktok-title">Edited Content</h2>
+            <h2 class="section-title" style="color:#ff0050">Edited Content</h2>
             <a href="https://tiktok.com" target="_blank" class="tiktok-link">Follow @SilverFoxNavigator</a>
-            <div class="tiktok-grid">
-                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;"><section></section></blockquote>
-                <blockquote class="tiktok-embed" cite="https://tiktok.com/video/VIDEO_ID" data-video-id="VIDEO_ID" style="max-width: 325px; min-width: 325px;"><section></section></blockquote>
-            </div>
         </div>
     </div>
 
+    <!-- REQUIRED SCRIPT FOR TIKTOK EMBEDS -->
     <script async src="https://tiktok.com"></script>
 
 </body>
