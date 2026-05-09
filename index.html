@@ -3,145 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver Fox Showcase</title>
-    
+    <title>Silver Fox Navigator</title>
     <link href="https://googleapis.com" rel="stylesheet">
-    
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #000;
-            font-family: 'Montserrat', sans-serif;
-            color: #d1d1d1;
-        }
-
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #000; font-family: 'Montserrat', sans-serif; }
         body {
-            background: 
-                radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%),
-                linear-gradient(180deg, rgba(13, 13, 13, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
-                url('Background1.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            display: flex; justify-content: center; align-items: center;
+            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%),
+                        linear-gradient(180deg, rgba(13, 13, 13, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+                        url('Background1.jpeg');
+            background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;
         }
-
-        /* HEADER: Logo and Name at Top Left */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 20px 30px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 100;
+        .container {
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            padding: 50px 40px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px;
+            max-width: 420px; width: 85%; box-shadow: 0 0 60px rgba(0, 0, 0, 1);
         }
-
-        .logo-small {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            overflow: hidden;
+        .logo-circle { width: 150px; height: 150px; border-radius: 50%; border: 1px solid rgba(142, 148, 154, 0.5); margin-bottom: 30px; overflow: hidden; }
+        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        h1 { letter-spacing: 6px; text-transform: uppercase; margin: 0; font-size: 2.4rem; color: #fff; font-weight: 700; }
+        h3 { text-transform: uppercase; color: #8e949a; font-size: 0.8rem; margin: 12px 0 30px 0; letter-spacing: 0.8em; text-indent: 0.8em; }
+        
+        /* NAVIGATION BUTTONS */
+        .nav-links { display: flex; flex-direction: column; gap: 15px; width: 100%; margin-top: 20px; }
+        .btn {
+            text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
+            transition: 0.3s; background: rgba(255,255,255,0.05);
         }
-
-        .logo-small img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .brand-text h1 {
-            font-size: 1.2rem;
-            margin: 0;
-            letter-spacing: 2px;
-            color: #fff;
-        }
-
-        .brand-text h3 {
-            font-size: 0.5rem;
-            margin: 0;
-            letter-spacing: 0.5em;
-            color: #8e949a;
-        }
-
-        /* MAIN CONTENT: Buttons */
-        .showcase-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding-top: 60px; /* Space for header */
-        }
-
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .nav-button {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            color: #fff;
-            padding: 20px;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
-
-        .nav-button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        h2.section-title {
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            font-weight: 300;
-            margin-bottom: 40px;
-            color: rgba(255,255,255,0.7);
-        }
+        .btn:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo-small">
-            <img src="Logo1.jpeg" alt="Logo">
-        </div>
-        <div class="brand-text">
-            <h1>Silver Fox</h1>
-            <h3>NAVIGATOR</h3>
-        </div>
-    </header>
-
-    <div class="showcase-container">
-        <h2 class="section-title">Showcase</h2>
-        
-        <div class="button-grid">
-            <!-- Replace # with your actual page links or filenames -->
-            <a href="projects.html" class="nav-button">Projects</a>
-            <a href="photography.html" class="nav-button">Photography</a>
-            <a href="about.html" class="nav-button">About Me</a>
-            <a href="contact.html" class="nav-button">Contact</a>
+    <div class="container">
+        <div class="logo-circle"><img src="Logo1.jpeg" alt="Logo"></div>
+        <h1>Silver Fox</h1>
+        <h3>NAVIGATOR</h3>
+        <div class="nav-links">
+            <a href="showcase.html" class="btn">Showcase Work</a>
+            <a href="about.html" class="btn">About Me</a>
         </div>
     </div>
-
 </body>
 </html>
