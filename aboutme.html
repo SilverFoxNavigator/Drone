@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Silver Fox</title>
+    
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        body { 
+            margin: 0; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Background1.jpeg'); 
+            background-size: cover; 
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif; 
+            color: #fff; 
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header { 
+            display: flex; 
+            align-items: center; 
+            padding: 15px 30px; 
+            background: rgba(10, 10, 10, 0.95); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-small { 
+            width: 45px; height: 45px; border-radius: 50%; 
+            overflow: hidden; margin-right: 15px; 
+            border: 1px solid rgba(255,255,255,0.5); 
+        }
+
+        .logo-small img { width: 100%; height: 100%; object-fit: cover; }
+        .brand h1 { font-size: 0.9rem; margin: 0; letter-spacing: 4px; text-transform: uppercase; }
+
+        .content { 
+            padding: 80px 20px; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+
+        .section-title {
+            font-weight: 300;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: #d1d1d1;
+            font-size: 1.5rem;
+        }
+
+        .bio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .bio-card p {
+            font-size: 1rem;
+            color: #a1a1a1;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .skill-item {
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #d1d1d1;
+            transform: translateY(-3px);
+        }
+
+        .back-home { 
+            color: #8e949a; text-decoration: none; font-size: 0.7rem; 
+            letter-spacing: 2px; text-transform: uppercase; 
+            margin-top: 60px; display: inline-block; 
+            border-bottom: 1px solid #8e949a;
+            padding-bottom: 5px;
+        }
+
+        .back-home:hover { color: #fff; border-color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-small"><img src="Logo1.jpeg" alt="Logo"></div>
+        <div class="brand"><h1>Silver Fox Navigator</h1></div>
+    </header>
+
+    <div class="content">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="bio-card">
+            <p>
+                Hello, I'm the face behind <strong>Silver Fox Navigator</strong>. 
+                Specialising in aerial cinematography and raw visual storytelling, 
+                I capture the world from perspectives that ground-level eyes often miss.
+            </p>
+            <p>
+                Whether it's raw 4K drone footage or edited high-energy content for 
+                platforms like TikTok, my goal is to provide a unique lens on the 
+                journeys we take.
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-item">Drone Piloting</div>
+                <div class="skill-item">Cinematography</div>
+                <div class="skill-item">Video Editing</div>
+                <div class="skill-item">Visual Arts</div>
+            </div>
+        </div>
+
+        <a href="mailto:your-email@example.com" class="contact-btn">Inquire for Work</a>
+
+        <br>
+        <a href="index.html" class="back-home">Return to Home</a>
+    </div>
+
+</body>
+</html>
