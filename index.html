@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silver Fox Navigator</title>
     
-    <!-- 1. CORRECTED FONT LINK -->
+    <!-- RUGGED TYPEWRITER FONT -->
     <link href="https://googleapis.com" rel="stylesheet">
     
     <style>
@@ -23,15 +23,18 @@
             align-items: center;
             font-family: 'Special Elite', serif;
             
-            /* 2. BACKGROUND STACK - FIXED SVG AND FILENAME */
+            /* BACKGROUND STACK */
             background: 
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"),
+                /* Rugged Grain Texture */
+                url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMjAwIDIwMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48ZmlsdGVyIGlkPSdub2lzZUZpbHRlcic+PGZlVHVyYnVsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzAuNjUnIG51bU9jdGF2ZXM9JzMnIHN0aXRjaFRpbGVzPSdzdGl0Y2gnLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWx0ZXI9J3VybCgjbm9pc2VGaWx0ZXIpJy8+PC9zdmc+"),
                 radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%),
                 linear-gradient(180deg, rgba(13, 13, 13, 0.7) 0%, rgba(30, 25, 20, 0.9) 100%),
-                url('Background1'); 
+                /* BACKGROUND FILE */
+                url('./Background1'); 
             
             background-size: 200px, cover, cover, cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
             color: #d1d1d1;
         }
@@ -43,81 +46,76 @@
             text-align: center;
             background: rgba(10, 10, 10, 0.85); 
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 4rem 3rem;
+            padding: 3rem 2rem;
             border: 1px solid rgba(142, 148, 154, 0.2); 
             box-shadow: 0 0 60px rgba(0, 0, 0, 1);
-            max-width: 500px;
+            max-width: 450px;
             width: 85%;
             border-radius: 2px;
         }
 
-        /* 3. LOGO STYLING - FIXED FILENAME */
         .logo {
             width: 140px;
             height: 140px;
             object-fit: cover;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-radius: 50%;
             border: 2px solid #8e949a;
-            filter: contrast(1.1) brightness(0.9);
+            /* Ensures logo doesn't disappear if background fails */
+            background-color: #1a1a1a; 
         }
 
         .text-group {
             width: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         h1 {
             letter-spacing: 2px;
             text-transform: uppercase;
             margin: 0;
-            font-size: 2.8rem;
-            line-height: 1;
+            font-size: 2.6rem;
+            line-height: 1.1;
             color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* 4. JUSTIFIED NAVIGATOR WIDTH */
+        /* FIXED NAVIGATOR WIDTH */
         h3 {
-            display: flex;
-            justify-content: space-between;
             text-transform: uppercase;
             color: #8e949a;
-            font-size: 1rem;
-            margin: 15px 0 0 0;
+            font-size: 0.95rem;
+            margin: 10px 0 0 0;
             font-weight: normal;
+            /* Adjusted letter spacing to match Silver Fox width better */
+            letter-spacing: 0.65em; 
+            text-indent: 0.65em; /* Offsets the last letter's spacing for perfect centering */
             width: 100%;
+            text-align: center;
         }
 
         .divider {
-            width: 100%;
+            width: 60px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #4a3b2b, transparent);
+            background: #4a3b2b;
             margin: 25px auto;
         }
 
         p {
             line-height: 1.8;
             color: #888;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin: 0;
-            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo file is exactly 'Logo1' -->
-        <img src="Logo1" class="logo" alt="Silver Fox Logo">
+        <!-- LOGO FILE -->
+        <img src="./Logo1" class="logo" alt="Silver Fox Logo">
         
         <div class="text-group">
             <h1>Silver Fox</h1>
-            <h3>
-                <span>N</span><span>A</span><span>V</span><span>I</span><span>G</span><span>A</span><span>T</span><span>O</span><span>R</span>
-            </h3>
+            <h3>NAVIGATOR</h3>
         </div>
         
         <div class="divider"></div>
