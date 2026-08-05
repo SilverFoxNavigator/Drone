@@ -1,0 +1,36 @@
+.compass {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.compass svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.compass circle,
+.compass line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.compass path {
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.compass text {
+  fill: currentColor;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
