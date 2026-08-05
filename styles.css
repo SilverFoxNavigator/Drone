@@ -1581,7 +1581,7 @@ h1 {
     aspect-ratio:
 
 
-    16 / 9;
+    16 / 10;
 
 
 
@@ -1959,43 +1959,157 @@ h1 {
 
 
 .expanded-video-grid {
-    display: grid;
-    /* Sets the cards at a clean vertical width (minimum 200px) */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+
+
+    display:grid;
+
+
+
+    grid-template-columns:
+
+
+    repeat(
+
+        auto-fit,
+
+        minmax(
+
+            280px,
+
+            1fr
+
+        )
+
+    );
+
+
+
+    gap:25px;
+
+
+
 }
+
+
+
+
+
+
 
 .expanded-card {
-    padding: 14px;
-    background: rgba(255, 255, 255, .03);
-    border: 1px solid rgba(201, 163, 109, .2);
-    border-radius: 10px;
-    
-    display: flex;
-    flex-direction: column;
+
+
+    padding:14px;
+
+
+
+    background:
+
+
+    rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .03
+
+    );
+
+
+
+    border:
+
+
+    1px solid
+
+    rgba(
+
+        201,
+
+        163,
+
+        109,
+
+        .2
+
+    );
+
+
+
+    border-radius:10px;
+
+
+
 }
 
-/* This forces the embedded video box to look exactly like a mobile phone screen */
+
+
+
+
+
+
 .expanded-card iframe {
-    width: 100%;
-    height: auto; 
-    
-    /* Flipped to 9/16 for mobile Shorts look */
-    aspect-ratio: 9 / 16 !important; 
-    
-    border: none;
-    border-radius: 6px;
-    background-color: #000; /* Pre-fills black background while loading */
+
+
+    width:100%;
+
+
+
+    aspect-ratio:
+
+
+    16 / 9;
+
+
+
+    border:none;
+
+
+
+    border-radius:6px;
+
+
+
 }
 
-/* Your exact font styles preserved here */
+
+
+
+
+
+
 .expanded-card h5 {
-    margin-top: 14px;
-    color: var(--white);
-    font-family: "Cinzel", serif;
-    font-weight: 500;
-}
 
+
+    margin-top:14px;
+
+
+
+    color:
+
+
+    var(--white);
+
+
+
+    font-family:
+
+
+    "Cinzel",
+
+
+    serif;
+
+
+
+    font-weight:500;
+
+
+
+}
 
 /* =========================================================
    MAP SECTION
