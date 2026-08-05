@@ -554,22 +554,20 @@ h1 {
 
 
     
-/* ==========================================================================
-   COMPASS IMAGE (FINAL SHIFT FIX)
-   ========================================================================== */
+/* ===========================
+   COMPASS IMAGE (UPDATED)
+=========================== */
 .bottom-detail {
     position: relative;
     z-index: 2;
     height: 100px;
     display: flex;
+    overflow: visible;
     justify-content: center;
     align-items: center;
     
-    /* 1. Hides anything that tries to bleed past the bottom boundary line */
-    overflow: hidden; 
-    
-    /* 2. Adds an airtight barrier so the section below stays separated */
-    margin-bottom: 50px; 
+    /* 1. Adds breathing room below your buttons before the image container starts */
+    margin-top: 40px; 
 }
 
 .bottom-detail-image {
@@ -577,8 +575,9 @@ h1 {
     max-width: 90%;
     opacity: .9;
     
-    /* 3. Shifts the image down perfectly without altering the section structure */
-    transform: translateY(35px); 
+    /* 2. Physically shifts the image downwards by 50px away from the buttons */
+    position: relative;
+    top: 50px; 
 }
 
 /* ===========================
