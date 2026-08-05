@@ -1960,9 +1960,8 @@ h1 {
 
 .expanded-video-grid {
     display: grid;
-    
-    /* Narrower columns to accommodate vertical 9:16 video cards */
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    /* Sets the cards at a clean vertical width (minimum 200px) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 25px;
 }
 
@@ -1972,24 +1971,24 @@ h1 {
     border: 1px solid rgba(201, 163, 109, .2);
     border-radius: 10px;
     
-    /* Flexbox keeps the title pushed nicely below the vertical video box */
     display: flex;
     flex-direction: column;
 }
 
+/* This forces the embedded video box to look exactly like a mobile phone screen */
 .expanded-card iframe {
     width: 100%;
+    height: auto; 
     
-    /* Changed from 16/9 to vertical 9/16 for YouTube Shorts */
-    aspect-ratio: 9 / 16;
+    /* Flipped to 9/16 for mobile Shorts look */
+    aspect-ratio: 9 / 16 !important; 
     
     border: none;
     border-radius: 6px;
-    
-    /* Prevents the video content from distorting inside the frame */
-    object-fit: cover;
+    background-color: #000; /* Pre-fills black background while loading */
 }
 
+/* Your exact font styles preserved here */
 .expanded-card h5 {
     margin-top: 14px;
     color: var(--white);
