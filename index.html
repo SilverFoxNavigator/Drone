@@ -1,49 +1,722 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silver Fox Navigator</title>
-    <link href="https://googleapis.com" rel="stylesheet">
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #000; font-family: 'Montserrat', sans-serif; }
-        body {
-            display: flex; justify-content: center; align-items: center;
-            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%),
-                        linear-gradient(180deg, rgba(13, 13, 13, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
-                        url('Background1.jpeg');
-            background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;
-        }
-        .container {
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            padding: 50px 40px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px;
-            max-width: 420px; width: 85%; box-shadow: 0 0 60px rgba(0, 0, 0, 1);
-        }
-        .logo-circle { width: 250px; height: 250px; border-radius: 50%; border: 1px solid rgba(142, 148, 154, 0.5); margin-bottom: 30px; overflow: hidden; }
-        .logo-circle img { width: 100%; height: 100%; object-fit: cover; }
-        h1 { letter-spacing: 6px; text-transform: uppercase; margin: 0; font-size: 2.4rem; color: #fff; font-weight: 700; }
-        h3 { text-transform: uppercase; color: #8e949a; font-size: 0.8rem; margin: 12px 0 30px 0; letter-spacing: 0.8em; text-indent: 0.8em; }
-        
-        /* NAVIGATION BUTTONS */
-        .nav-links { display: flex; flex-direction: column; gap: 15px; width: 100%; margin-top: 20px; }
-        .btn {
-            text-decoration: none; color: #fff; border: 1px solid rgba(255,255,255,0.2);
-            padding: 12px; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
-            transition: 0.3s; background: rgba(255,255,255,0.05);
-        }
-        .btn:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Silver Fox Navigator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #07121a;
+      --cream: #f2e6d2;
+      --gold: #c9a36d;
+      --white: #f7f4ee;
+      --border: rgba(232, 207, 170, 0.8);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(2, 9, 15, 0.12),
+          rgba(2, 9, 15, 0.68)
+        ),
+        url("background.jpg") center / cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at 17% 20%,
+          rgba(226, 155, 67, 0.25),
+          transparent 28%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(2, 9, 15, 0.4),
+          transparent 30%,
+          transparent 70%,
+          rgba(2, 9, 15, 0.4)
+        );
+
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 42%,
+          rgba(2, 8, 13, 0.28) 66%,
+          rgba(2, 8, 13, 0.9) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    .header {
+      position: relative;
+      z-index: 10;
+
+      width: min(1400px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0;
+
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      align-items: center;
+    }
+
+    .drone-symbol {
+      font-size: 30px;
+      color: var(--cream);
+      text-align: center;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: clamp(22px, 4vw, 62px);
+    }
+
+    .navigation a {
+      position: relative;
+      padding: 12px 0;
+
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .navigation a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 4px;
+
+      height: 1px;
+      background: var(--gold);
+
+      transition: right 0.25s ease;
+    }
+
+    .navigation a:hover::after,
+    .navigation a.active::after {
+      right: 0;
+    }
+
+    .map-symbol {
+      font-size: 25px;
+    }
+
+    .menu-button {
+      display: none;
+
+      width: 44px;
+      height: 40px;
+
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin: 7px 0;
+      background: var(--cream);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: min(1250px, calc(100% - 40px));
+      margin: auto;
+      padding: 10px 0 35px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    .logo {
+      width: clamp(190px, 25vw, 360px);
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+      border-radius: 50%;
+
+      border: 2px solid rgba(244, 228, 202, 0.8);
+
+      box-shadow:
+        0 18px 60px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(214, 177, 122, 0.12);
+
+      margin-bottom: 35px;
+    }
+
+    .title-container {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: minmax(30px, 1fr) auto minmax(30px, 1fr);
+      align-items: center;
+
+      gap: clamp(18px, 3vw, 45px);
+    }
+
+    .title-line {
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--border)
+      );
+    }
+
+    .title-line:last-child {
+      background: linear-gradient(
+        90deg,
+        var(--border),
+        transparent
+      );
+    }
+
+    h1 {
+      color: var(--cream);
+
+      font-family: "Cinzel", serif;
+      font-size: clamp(44px, 7vw, 106px);
+      font-weight: 600;
+      line-height: 0.95;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      text-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    }
+
+    .tagline {
+      margin: 25px 0 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: clamp(14px, 2vw, 34px);
+
+      text-transform: uppercase;
+      letter-spacing: clamp(0.22em, 0.65vw, 0.7em);
+      font-size: clamp(11px, 1.4vw, 16px);
+    }
+
+    .tagline-divider {
+      width: 1px;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .buttons {
+      width: min(620px, 100%);
+
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-button {
+      min-height: 70px;
+      padding: 14px 24px;
+
+      display: grid;
+      grid-template-columns: 70px 1fr 70px;
+      align-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 14px;
+
+      background: rgba(3, 12, 19, 0.4);
+      backdrop-filter: blur(8px);
+
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 15px;
+      font-weight: 500;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+
+      background: rgba(201, 163, 109, 0.13);
+
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(201, 163, 109, 0.04);
+    }
+
+    .button-icon {
+      color: var(--gold);
+      font-size: 25px;
+    }
+
+    .button-arrow {
+      justify-self: end;
+      font-size: 32px;
+      font-weight: 300;
+    }
+
+    .bottom-detail {
+      position: relative;
+      z-index: 2;
+
+      width: min(760px, 75vw);
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+
+      gap: 20px;
+      opacity: 0.65;
+    }
+
+    .mountain-line {
+      height: 44px;
+      border-top: 1px solid var(--gold);
+      transform: skewY(-8deg);
+    }
+
+    .mountain-line:last-child {
+      transform: skewY(8deg);
+    }
+
+    .compass {
+      width: 90px;
+      height: 90px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      color: var(--gold);
+      font-size: 35px;
+    }
+
+    .section {
+      min-height: 55vh;
+      padding: 100px max(24px, calc((100vw - 1100px) / 2));
+
+      background: #eee7dc;
+      color: #17212a;
+    }
+
+    .section.dark {
+      background: #08131b;
+      color: var(--white);
+    }
+
+    .section-label {
+      color: #a57b45;
+
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 13px;
+    }
+
+    .section h2 {
+      max-width: 850px;
+      margin: 10px 0 24px;
+
+      font-family: "Cinzel", serif;
+      font-size: clamp(34px, 5vw, 64px);
+      font-weight: 600;
+    }
+
+    .section p {
+      max-width: 760px;
+      line-height: 1.8;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      margin-top: 45px;
+    }
+
+    .video-card {
+      padding: 14px;
+
+      border: 1px solid rgba(201, 163, 109, 0.35);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .video-thumbnail {
+      aspect-ratio: 16 / 10;
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.02),
+          rgba(0, 0, 0, 0.42)
+        ),
+        url("background.jpg") center / cover;
+    }
+
+    .video-card h3 {
+      margin: 18px 4px 8px;
+
+      font-family: "Cinzel", serif;
+      font-weight: 500;
+    }
+
+    @media (max-width: 850px) {
+      .header {
+        grid-template-columns: 1fr auto;
+      }
+
+      .menu-button {
+        display: block;
+        position: relative;
+        z-index: 20;
+      }
+
+      .navigation {
+        display: none;
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+
+        padding: 25px;
+
+        background: rgba(3, 12, 19, 0.95);
+        border: 1px solid rgba(201, 163, 109, 0.4);
+
+        backdrop-filter: blur(15px);
+      }
+
+      .navigation.open {
+        display: grid;
+        gap: 20px;
+      }
+
+      .nav-group {
+        display: grid;
+        gap: 8px;
+      }
+
+      .title-container {
+        grid-template-columns: 1fr;
+      }
+
+      .title-line {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 76px);
+        letter-spacing: 0.04em;
+      }
+
+      .logo {
+        width: min(240px, 56vw);
+      }
+
+      .hero-button {
+        grid-template-columns: 45px 1fr 35px;
+        font-size: 13px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header,
+      .hero-content {
+        width: calc(100% - 24px);
+      }
+
+      .tagline {
+        gap: 11px;
+        letter-spacing: 0.2em;
+        font-size: 10px;
+      }
+
+      .tagline-divider {
+        height: 18px;
+      }
+
+      .hero-button {
+        padding: 13px;
+        letter-spacing: 0.13em;
+      }
+
+      .bottom-detail {
+        width: 90vw;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="logo-circle"><img src="Logo1.jpeg" alt="Logo"></div>
-        <h1>DRONE FOOTAGE</h1>
-        <h3>RAW | NATURE | BEAUTY</h3>
-        <div class="nav-links">
-            <a href="showcase.html" class="btn">Showcase Work</a>
-            <a href="aboutme.html" class="btn">About Me</a>
+
+  <main class="hero" id="home">
+
+    <header class="header">
+
+      <div class="drone-symbol">⌁</div>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navigation" id="navigation">
+
+        <div class="nav-group">
+          <a href="#home" class="active">Home</a>
+          <a href="#explore">Explore</a>
+          <a href="#videos">Videos</a>
         </div>
+
+        <div class="nav-group">
+          <a href="#about">About</a>
+          <a href="#map">Map</a>
+          <a href="#map" class="map-symbol">⌖</a>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <section class="hero-content">
+
+      <img
+        src="logo.png"
+        alt="Silver Fox Navigator logo"
+        class="logo"
+      >
+
+      <div class="title-container">
+
+        <span class="title-line"></span>
+
+        <h1>Drone Footage</h1>
+
+        <span class="title-line"></span>
+
+      </div>
+
+      <div class="tagline">
+
+        <span>Raw</span>
+
+        <span class="tagline-divider"></span>
+
+        <span>Nature</span>
+
+        <span class="tagline-divider"></span>
+
+        <span>Beauty</span>
+
+      </div>
+
+      <div class="buttons">
+
+        <a href="#videos" class="hero-button">
+
+          <span class="button-icon">✥</span>
+
+          <span>Showcase Work</span>
+
+          <span class="button-arrow">›</span>
+
+        </a>
+
+        <a href="#about" class="hero-button">
+
+          <span class="button-icon">♙</span>
+
+          <span>About Me</span>
+
+          <span class="button-arrow">›</span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <div class="bottom-detail">
+
+      <span class="mountain-line"></span>
+
+      <div class="compass">✦</div>
+
+      <span class="mountain-line"></span>
+
     </div>
+
+  </main>
+
+  <section class="section" id="explore">
+
+    <p class="section-label">Explore from above</p>
+
+    <h2>Wild places, seen differently.</h2>
+
+    <p>
+      Discover mountains, coastlines, forests and hiking routes through
+      cinematic drone footage.
+    </p>
+
+  </section>
+
+  <section class="section dark" id="videos">
+
+    <p class="section-label">Showcase</p>
+
+    <h2>Latest footage</h2>
+
+    <div class="video-grid">
+
+      <article class="video-card">
+        <div class="video-thumbnail"></div>
+        <h3>Mountain Films</h3>
+      </article>
+
+      <article class="video-card">
+        <div class="video-thumbnail"></div>
+        <h3>Coastal Flights</h3>
+      </article>
+
+      <article class="video-card">
+        <div class="video-thumbnail"></div>
+        <h3>Hiking Stories</h3>
+      </article>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="about">
+
+    <p class="section-label">About</p>
+
+    <h2>Silver Fox Navigator</h2>
+
+    <p>
+      Add your story here, including the places you visit, the drone you use
+      and what inspired you to create Silver Fox Navigator.
+    </p>
+
+  </section>
+
+  <section class="section dark" id="map">
+
+    <p class="section-label">Interactive map</p>
+
+    <h2>Find footage by location.</h2>
+
+    <p>
+      This section can later contain your interactive map with clickable
+      location markers linking to your videos.
+    </p>
+
+  </section>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("navigation");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = navigation.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", isOpen);
+    });
+
+    document.querySelectorAll(".navigation a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navigation.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+
 </body>
 </html>
