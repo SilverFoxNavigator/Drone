@@ -552,7 +552,7 @@ button {
     position:relative;
 
 
-    z-index:5;
+    z-index:10;
 
 
 
@@ -1167,7 +1167,7 @@ h1 {
 
 
 
-    z-index:5;
+    z-index:1;
 
 
 
