@@ -496,6 +496,86 @@
       }
     }
 
+    /* Container for the expanded sub-grids */
+.expanded-video-container {
+  display: none; /* Hidden by default */
+  width: 100%;
+  margin-top: 30px;
+  padding: 24px;
+  background: rgba(4, 10, 15, 0.6);
+  border: 1px solid rgba(201, 163, 109, 0.25);
+  border-radius: 12px;
+  animation: fadeInGrid 0.4s ease-in-out;
+}
+
+/* Active style to reveal selected grid */
+.expanded-video-container.active {
+  display: block;
+}
+
+/* Gallery Header bar configuration */
+.expanded-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
+
+.expanded-header h4 {
+  font-family: "Cinzel", serif;
+  color: var(--cream);
+  font-size: 1.2rem;
+}
+
+.close-grid-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* The actual target video layout subgrid layout */
+.expanded-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto sizes to fit screen space safely */
+  gap: 20px;
+}
+
+.expanded-card {
+  background: rgba(255,255,255,0.02);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.expanded-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Perfect mobile widescreen scaling */
+  border-radius: 4px;
+}
+
+.expanded-card h5 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* Card hover cursor signifier */
+.video-card {
+  cursor: pointer;
+}
+
+@keyframes fadeInGrid {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
  .bottom-detail {
   position: relative;
   width: 100%;
@@ -729,7 +809,6 @@
   </div>
 </div>
 
-  </section>
 
   <section class="section" id="map">
 
@@ -794,6 +873,30 @@
         menuButton.setAttribute("aria-expanded", "false");
       });
     });
+
+    function toggleSubGrid(category) {
+  // 1. Get the target grid element
+  const targetGrid = document.getElementById('grid-' + category);
+  const isAlreadyActive = targetGrid.classList.contains('active');
+  
+  // 2. Hide all open subgrids first 
+  closeAllGrids();
+  
+  // 3. If it wasn't open, open it and scroll it smoothly into view
+  if (!isAlreadyActive) {
+    targetGrid.classList.add('active');
+    setTimeout(() => {
+      targetGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+}
+
+function closeAllGrids() {
+  document.querySelectorAll('.expanded-video-container').forEach(container => {
+    container.classList.remove('active');
+  });
+}
+
   </script>
 
 
