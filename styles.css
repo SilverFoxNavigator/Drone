@@ -1959,157 +1959,44 @@ h1 {
 
 
 .expanded-video-grid {
-
-
-    display:grid;
-
-
-
-    grid-template-columns:
-
-
-    repeat(
-
-        auto-fit,
-
-        minmax(
-
-            280px,
-
-            1fr
-
-        )
-
-    );
-
-
-
-    gap:25px;
-
-
-
+    display: grid;
+    
+    /* Narrower columns to accommodate vertical 9:16 video cards */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
 }
-
-
-
-
-
-
 
 .expanded-card {
-
-
-    padding:14px;
-
-
-
-    background:
-
-
-    rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .03
-
-    );
-
-
-
-    border:
-
-
-    1px solid
-
-    rgba(
-
-        201,
-
-        163,
-
-        109,
-
-        .2
-
-    );
-
-
-
-    border-radius:10px;
-
-
-
+    padding: 14px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(201, 163, 109, .2);
+    border-radius: 10px;
+    
+    /* Flexbox keeps the title pushed nicely below the vertical video box */
+    display: flex;
+    flex-direction: column;
 }
-
-
-
-
-
-
 
 .expanded-card iframe {
-
-
-    width:100%;
-
-
-
-    aspect-ratio:
-
-
-    16 / 9;
-
-
-
-    border:none;
-
-
-
-    border-radius:6px;
-
-
-
+    width: 100%;
+    
+    /* Changed from 16/9 to vertical 9/16 for YouTube Shorts */
+    aspect-ratio: 9 / 16;
+    
+    border: none;
+    border-radius: 6px;
+    
+    /* Prevents the video content from distorting inside the frame */
+    object-fit: cover;
 }
-
-
-
-
-
-
 
 .expanded-card h5 {
-
-
-    margin-top:14px;
-
-
-
-    color:
-
-
-    var(--white);
-
-
-
-    font-family:
-
-
-    "Cinzel",
-
-
-    serif;
-
-
-
-    font-weight:500;
-
-
-
+    margin-top: 14px;
+    color: var(--white);
+    font-family: "Cinzel", serif;
+    font-weight: 500;
 }
+
 
 /* =========================================================
    MAP SECTION
