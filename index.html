@@ -759,55 +759,69 @@
      ========================================== -->
 
 <!-- Mountain Expansion Grid -->
-<div class="expanded-video-container" id="grid-mountain">
-  <div class="expanded-header">
-    <h4>Mountain Films Gallery</h4>
-    <button class="close-grid-btn" onclick="closeAllGrids()">✕ Close</button>
-  </div>
-  <div class="expanded-video-grid">
-    <!-- Replace the src with your actual YouTube ID embedding -->
-    <div class="expanded-card">
-      <iframe src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-      <h5>Cadair Idris Ridge Run</h5>
-    </div>
-    <div class="expanded-card">
-      <iframe src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-      <h5>Snowdonia Summit Sunset</h5>
-    </div>
-    <div class="expanded-card">
-      <iframe src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-      <h5>Glyder Fach Scramble</h5>
-    </div>
-  </div>
-</div>
+  <!-- ==========================================
+       LARGER SUB-GRIDS (STYLISH ACCORDION SECTIONS)
+       ========================================== -->
 
-<!-- Coastal Expansion Grid -->
-<div class="expanded-video-container" id="grid-coastal">
-  <div class="expanded-header">
-    <h4>Coastal Flights Gallery</h4>
-    <button class="close-grid-btn" onclick="closeAllGrids()">✕ Close</button>
-  </div>
-  <div class="expanded-video-grid">
-    <div class="expanded-card">
-      <iframe src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-      <h5>Pembrokeshire Cliffs</h5>
+  <!-- Mountain Expansion Grid -->
+  <!-- INJECTED margin-bottom: 35px; TO RESOLVE OVERLAP ELEMENT CLIPPING -->
+  <div class="expanded-video-container" id="grid-mountain" style="display: none; width: 100%; margin-top: 35px; margin-bottom: 35px; padding: 24px; background: rgba(4, 10, 15, 0.6); border: 1px solid rgba(201, 163, 109, 0.25); border-radius: 14px;">
+    <div class="expanded-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+      <h4 style="font-family: 'Cinzel', serif; color: var(--cream); font-size: 1.3rem; font-weight: 500; letter-spacing: 0.05em;">Mountain Films Gallery</h4>
+      <button class="close-grid-btn" onclick="closeAllGrids()" style="background: transparent; border: 1px solid var(--gold); color: var(--white); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 12px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.25s;">✕ Close</button>
     </div>
-  </div>
-</div>
+    <div class="expanded-video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      
+      <!-- Video Item 1 -->
+      <div class="expanded-card" style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: 10px; border: 1px solid rgba(201, 163, 109, 0.15);">
+        <iframe src="https://youtube.com" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: none;" allowfullscreen></iframe>
+        <h5 style="font-family: 'Cinzel', serif; font-weight: 500; margin-top: 14px; font-size: 15px; color: var(--white);">Cadair Idris Ridge Run</h5>
+      </div>
+      
+      <!-- Video Item 2 -->
+      <div class="expanded-card" style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: 10px; border: 1px solid rgba(201, 163, 109, 0.15);">
+        <iframe src="https://youtube.com" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: none;" allowfullscreen></iframe>
+        <h5 style="font-family: 'Cinzel', serif; font-weight: 500; margin-top: 14px; font-size: 15px; color: var(--white);">Snowdonia Summit Sunset</h5>
+      </div>
+      
+      <!-- Video Item 3 -->
+      <div class="expanded-card" style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: 10px; border: 1px solid rgba(201, 163, 109, 0.15);">
+        <iframe src="https://youtube.com" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: none;" allowfullscreen></iframe>
+        <h5 style="font-family: 'Cinzel', serif; font-weight: 500; margin-top: 14px; font-size: 15px; color: var(--white);">Glyder Fach Scramble</h5>
+      </div>
 
-<!-- Hiking Expansion Grid -->
-<div class="expanded-video-container" id="grid-hiking">
-  <div class="expanded-header">
-    <h4>Hiking Stories Gallery</h4>
-    <button class="close-grid-btn" onclick="closeAllGrids()">✕ Close</button>
-  </div>
-  <div class="expanded-video-grid">
-    <div class="expanded-card">
-      <iframe src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
-      <h5>Minffordd Track Day Vlog</h5>
     </div>
   </div>
-</div>
+
+  <!-- Coastal Expansion Grid -->
+  <!-- INJECTED margin-bottom: 35px; FOR CLEAN CLOSING SEPARATOR WRAPPERS -->
+  <div class="expanded-video-container" id="grid-coastal" style="display: none; width: 100%; margin-top: 35px; margin-bottom: 35px; padding: 24px; background: rgba(4, 10, 15, 0.6); border: 1px solid rgba(201, 163, 109, 0.25); border-radius: 14px;">
+    <div class="expanded-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+      <h4 style="font-family: 'Cinzel', serif; color: var(--cream); font-size: 1.3rem; font-weight: 500; letter-spacing: 0.05em;">Coastal Flights Gallery</h4>
+      <button class="close-grid-btn" onclick="closeAllGrids()" style="background: transparent; border: 1px solid var(--gold); color: var(--white); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 12px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.25s;">✕ Close</button>
+    </div>
+    <div class="expanded-video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div class="expanded-card" style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: 10px; border: 1px solid rgba(201, 163, 109, 0.15);">
+        <iframe src="https://youtube.com" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: none;" allowfullscreen></iframe>
+        <h5 style="font-family: 'Cinzel', serif; font-weight: 500; margin-top: 14px; font-size: 15px; color: var(--white);">Pembrokeshire Cliffs</h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hiking Expansion Grid -->
+  <!-- INJECTED margin-bottom: 35px; TO FORCE SHIFT NEXT SECTION SEPARATION -->
+  <div class="expanded-video-container" id="grid-hiking" style="display: none; width: 100%; margin-top: 35px; margin-bottom: 35px; padding: 24px; background: rgba(4, 10, 15, 0.6); border: 1px solid rgba(201, 163, 109, 0.25); border-radius: 14px;">
+    <div class="expanded-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
+      <h4 style="font-family: 'Cinzel', serif; color: var(--cream); font-size: 1.3rem; font-weight: 500; letter-spacing: 0.05em;">Hiking Stories Gallery</h4>
+      <button class="close-grid-btn" onclick="closeAllGrids()" style="background: transparent; border: 1px solid var(--gold); color: var(--white); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 12px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; transition: background 0.25s;">✕ Close</button>
+    </div>
+    <div class="expanded-video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div class="expanded-card" style="background: rgba(255,255,255,0.02); padding: 14px; border-radius: 10px; border: 1px solid rgba(201, 163, 109, 0.15);">
+        <iframe src="https://youtube.com" style="width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; border: none;" allowfullscreen></iframe>
+        <h5 style="font-family: 'Cinzel', serif; font-weight: 500; margin-top: 14px; font-size: 15px; color: var(--white);">Minffordd Track Day Vlog</h5>
+      </div>
+    </div>
+  </div>
 
 
   <section class="section" id="map">
