@@ -555,102 +555,156 @@ h1 {
 
     
 /* ===========================
-   COMPASS IMAGE
+   COMPASS IMAGE (UPDATED)
+=========================== */
+.bottom-detail {
+    position: relative;
+    z-index: 2;
+    height: 100px;
+    display: flex;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    
+    /* 1. Adds breathing room below your buttons before the image container starts */
+    margin-top: 40px; 
+}
+
+.bottom-detail-image {
+    width: 800px;
+    max-width: 90%;
+    opacity: .9;
+    
+    /* 2. Physically shifts the image downwards by 50px away from the buttons */
+    position: relative;
+    top: 50px; 
+}
+
+
+/* ===========================
+   HERO BUTTONS
 =========================== */
 
 
-.bottom-detail {
+.buttons {
 
 
-    position:relative;
+    width:min(
+        620px,
+        100%
+    );
 
 
-    z-index:2;
+    display:grid;
 
 
-    height:100px;
+    gap:18px;
 
 
-    display:flex;
-
-    overflow: visible;
+}
 
 
-    justify-content:center;
+
+.hero-button {
+
+
+    min-height:70px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    60px 1fr 50px;
 
 
     align-items:center;
 
 
+    padding:15px 25px;
+
+
+    border:
+
+    1px solid
+    var(--border);
+
+
+    border-radius:14px;
+
+
+    background:
+
+    rgba(3,12,19,.45);
+
+
+    backdrop-filter:
+    blur(8px);
+
+
+    text-transform:uppercase;
+
+
+    letter-spacing:.2em;
+
+
+    font-size:15px;
+
+
+    transition:.3s;
+
+
+
 }
 
 
-
-.bottom-detail-image {
-
-
-    width:800px;
-
-
-    max-width:90%;
-
-
-    opacity:.9;
-
-
-}
-
-
-
-/* ==========================================================================
-   HERO BUTTONS (UPDATED)
-   ========================================================================== */
-.buttons {
-    width: min(620px, 100%);
-    display: grid;
-    gap: 18px;
-    
-    /* 1. SHIFTS THEM UP: Moves buttons 60px up over the compass image background */
-    transform: translateY(-60px); 
-    
-    /* 2. FIXES CLICKABILITY: Ensures buttons layer on top and stay clickable */
-    position: relative;
-    z-index: 5;
-}
-
-.hero-button {
-    min-height: 70px;
-    display: grid;
-    grid-template-columns: 60px 1fr 50px;
-    align-items: center;
-    padding: 15px 25px;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: rgba(3, 12, 19, .45);
-    backdrop-filter: blur(8px);
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    font-size: 15px;
-    transition: .3s;
-}
 
 .hero-button:hover {
-    /* Keeps the hover pop effect working alongside the shift */
-    transform: translateY(-64px); 
-    background: rgba(201, 163, 109, .15);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+
+
+    transform:
+    translateY(-4px);
+
+
+    background:
+
+    rgba(201,163,109,.15);
+
+
+    box-shadow:
+
+    0 15px 35px
+    rgba(0,0,0,.35);
+
+
 }
+
+
 
 .button-icon {
-    color: var(--gold);
-    font-size: 25px;
+
+
+    color:
+    var(--gold);
+
+
+    font-size:25px;
+
+
 }
+
+
 
 .button-arrow {
-    justify-self: end;
-    font-size: 32px;
-}
 
+
+    justify-self:end;
+
+
+    font-size:32px;
+
+
+}
 
 
 
