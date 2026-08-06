@@ -2172,100 +2172,46 @@ allowfullscreen>
 <!-- ===========================
      MAP SECTION
 =========================== -->
-
-
 <section class="section" id="map">
+    <p class="section-label">Interactive Map</p>
+    <h2>Find footage by location.</h2>
+    <p>
+        Explore the world through an interactive globe.
+        Each location marker will connect directly to cinematic drone footage,
+        trail guides and landscape stories.
+    </p>
 
-
-<p class="section-label">
-
-Interactive Map
-
-</p>
-
-
-
-
-<h2>
-
-Find footage by location.
-
-</h2>
-
-
-
-
-<p>
-
-Explore the world through an interactive globe.
-Each location marker will connect directly to cinematic drone footage,
-trail guides and landscape stories.
-
-</p>
-
-
-
-
-<!-- Future map container -->
-
-<div
-
-id="map-container"
-
-style="
-
-margin-top:40px;
-
-height:450px;
-
-border:1px solid rgba(201,163,109,.35);
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-background:rgba(0,0,0,.08);
-
-font-family:Cinzel,serif;
-
-letter-spacing:.1em;
-
-text-transform:uppercase;
-
-">
-
-
-<!-- ===========================
-     UK MAP SECTION
-=========================== -->
-<div class="map-section-wrapper">
-    <div class="map-container">
-        <iframe 
-            src="https://google.com" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+    <!-- Future map container -->
+    <div id="map-container" style="
+        margin-top: 40px;
+        height: 450px;
+        border: 1px solid rgba(201, 163, 109, .35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, .08);
+        font-family: Cinzel, serif;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        border-radius: 14px; /* Matches your core theme styling */
+        overflow: hidden;    /* Sharpens layout by clipping map corners */
+    ">
+        <!-- ===========================
+             UK MAP IFRAME
+        =========================== -->
+        <div class="map-section-wrapper" style="width: 100%; height: 100%;">
+            <div class="map-container" style="width: 100%; height: 100%;">
+                <iframe 
+                    src="https://google.com" 
+                    style="width: 100%; height: 100%; border: none;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
     </div>
-</div>
-
-
-
-</div>
-
-
-
 </section>
-
-
-
-
-
-
-
-
 
 <!-- ===========================
      ABOUT SECTION
