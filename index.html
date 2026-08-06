@@ -1378,6 +1378,7 @@ h1 {
 
 </style>
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" > <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""> </script>
 </head>
 
 
@@ -2199,21 +2200,11 @@ allowfullscreen>
         <!-- ===========================
              UK MAP IFRAME
         =========================== -->
-        <div class="map-section-wrapper" style="width: 100%; height: 100%;">
-            <div class="map-container" style="width: 100%; height: 100%;">
-               <iframe
-  src="https://www.google.com/maps?q=United+Kingdom&z=6&output=embed"
-  width="100%"
-  height="500"
-  style="border:0; border-radius:20px;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade"
-  title="Silver Fox UK adventure map">
-</iframe>
 
-            </div>
-        </div>
+        <div class="map-section-wrapper">
+  <div id="silverfox-map"></div>
+</div>
+        
     </div>
 </section>
 
@@ -2659,6 +2650,61 @@ h1{
 
 }
 
+    .map-section-wrapper {
+  width: min(1200px, 94%);
+  margin: 30px auto 70px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 163, 109, 0.35);
+  border-radius: 22px;
+  box-sizing: border-box;
+}
+
+#silverfox-map {
+  width: 100%;
+  height: 600px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #d8d8d8;
+}
+
+.silverfox-popup {
+  min-width: 190px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.silverfox-popup h3 {
+  margin: 3px 0 8px;
+  color: #111;
+  font-size: 18px;
+}
+
+.silverfox-popup p {
+  margin: 0 0 12px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.silverfox-popup a {
+  display: inline-block;
+  padding: 9px 15px;
+  border-radius: 20px;
+  background: #07121a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  #silverfox-map {
+    height: 480px;
+  }
+
+  .map-section-wrapper {
+    width: 96%;
+  }
+}
 </style>
 
 
@@ -3002,6 +3048,85 @@ Drone Footage • Nature • Exploration
 
 </footer>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mapElement = document.getElementById("silverfox-map");
+
+    if (!mapElement) {
+      return;
+    }
+
+    const map = L.map("silverfox-map", {
+      scrollWheelZoom: false
+    }).setView([54.6, -3.4], 6);
+
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    const adventures = [
+      {
+        name: "Scafell Pike",
+        coordinates: [54.4543, -3.2116],
+        description: "England’s highest mountain and dramatic Lake District scenery.",
+        video: "#"
+      },
+      {
+        name: "Old Man of Coniston",
+        coordinates: [54.3706, -3.1225],
+        description: "Mountain trails, historic mines and views over Coniston Water.",
+        video: "#"
+      },
+      {
+        name: "Cadair Idris",
+        coordinates: [52.6994, -3.9085],
+        description: "A spectacular mountain adventure in southern Snowdonia.",
+        video: "#"
+      },
+      {
+        name: "Pen y Fan",
+        coordinates: [51.8833, -3.4367],
+        description: "The highest peak in the Brecon Beacons.",
+        video: "#"
+      },
+      {
+        name: "Durdle Door",
+        coordinates: [50.6212, -2.2768],
+        description: "Drone views over one of the Jurassic Coast’s most famous landmarks.",
+        video: "#"
+      },
+      {
+        name: "Rhinog Fawr",
+        coordinates: [52.8528, -3.9995],
+        description: "A rugged and remote mountain route through the Rhinogydd.",
+        video: "#"
+      }
+    ];
+
+    adventures.forEach(function (adventure) {
+      const popupContent = `
+        <div class="silverfox-popup">
+          <h3>${adventure.name}</h3>
+          <p>${adventure.description}</p>
+          <a href="${adventure.video}" target="_blank" rel="noopener noreferrer">
+            Watch adventure
+          </a>
+        </div>
+      `;
+
+      L.marker(adventure.coordinates)
+        .addTo(map)
+        .bindPopup(popupContent);
+    });
+
+    window.setTimeout(function () {
+      map.invalidateSize();
+    }, 250);
+  });
+</script>
 
 
 
