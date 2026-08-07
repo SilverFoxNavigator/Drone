@@ -114,7 +114,7 @@ button {
 .map-container {
     width: 100%;
     aspect-ratio: 16 / 9; /* Keeps a clean widescreen layout proportions */
-    max-height: 500px;    /* Prevents it from taking up too much vertical space */
+    max-height: 600px;    /* Prevents it from taking up too much vertical space */
     
     /* Matches your site's existing border-radius and gold styling */
     border: 1px solid rgba(201, 163, 109, .3); 
