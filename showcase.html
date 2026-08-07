@@ -143,5 +143,84 @@
             <div class="video-item"><video controls muted loop><source src="video8.mp4" type="video/mp4"></video><div class="video-label">Clip 08</div></div>
         </div>
     </div>
+
+    // 1. Initialize the map and center it on the UK (Latitude: 54.0, Longitude: -2.5, Zoom: 6)
+const map = L.map('map').setView([54.0, -2.5], 6);
+
+// 2. Load and display map tiles from OpenStreetMap (Free, open-source map visuals)
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19
+}).addTo(map);
+
+// 3. Define your regions and the specific trails hidden inside them
+const hikingData = [
+    {
+        name: "Lake District",
+        lat: 54.4609,
+        lng: -3.0886,
+        zoomLevel: 12,
+        trails: [
+            { name: "Scafell Pike (Wasdale)", lat: 54.4552, lng: -3.2120 },
+            { name: "Catbells High Spy Walk", lat: 54.5664, lng: -3.1678 },
+            { name: "Helvellyn via Striding Edge", lat: 54.5269, lng: -3.0175 }
+        ]
+    },
+    {
+        name: "Peak District",
+        lat: 53.3500,
+        lng: -1.8333,
+        zoomLevel: 11,
+        trails: [
+            { name: "Kinder Scout Loop", lat: 53.3846, lng: -1.8741 },
+            { name: "Mam Tor Circular Walk", lat: 53.3492, lng: -1.7791 },
+            { name: "The Roaches & Lud's Church", lat: 53.1610, lng: -2.0034 }
+        ]
+    }
+];
+
+// Arrays to keep track of created pointers on the map
+const regionMarkers = [];
+const trailMarkers = [];
+
+// 4. Create the main regional pointers (Lake District, Peak District)
+hikingData.forEach(region => {
+    const marker = L.marker([region.lat, region.lng]).addTo(map);
+    
+    // Bind a quick text tooltip that shows on hover
+    marker.bindTooltip(region.name, { permanent: false, direction: 'top' });
+    regionMarkers.push(marker);
+
+    // ACTION: When a region pointer is clicked, zoom directly into it
+    marker.on('click', function() {
+        map.setView([region.lat, region.lng], region.zoomLevel);
+    });
+
+    // 5. Create the detailed trail pointers for this region (initially hidden)
+    region.trails.forEach(trail => {
+        // We create the pointer but DO NOT use '.addTo(map)' yet so it stays invisible
+        const trailMarker = L.marker([trail.lat, trail.lng])
+            .bindPopup(`<strong>${trail.name}</strong><br><a href="#" style="color:#0078ff;">View Trail Details</a>`);
+        
+        // Save it to our tracker array
+        trailMarkers.push(trailMarker);
+    });
+});
+
+// 6. Manage Visibility: Dynamically show/hide pointers based on map zoom level
+map.on('zoomend', function() {
+    const currentZoom = map.getZoom();
+
+    // If zoomed in deep (level 10 or higher), show trails and hide big regions
+    if (currentZoom >= 10) {
+        trailMarkers.forEach(marker => marker.addTo(map));
+        regionMarkers.forEach(marker => map.removeLayer(marker));
+    } 
+    // If zoomed out, hide trail pointers and bring back the main region pointers
+    else {
+        trailMarkers.forEach(marker => map.removeLayer(marker));
+        regionMarkers.forEach(marker => marker.addTo(map));
+    }
+});
 </body>
 </html>
